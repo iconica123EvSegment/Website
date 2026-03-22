@@ -313,35 +313,7 @@ export default function TestRide() {
             />
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[
-              { city: 'Bangalore', address: 'Plot No. AM 7, Sompura Industrial Area, Nelamangala Taluk, Bangalore - 562 111', phone: '+91 (800) 123-0001' },
-              { city: 'Noida', address: 'Sector 63, A Block, Noida, Uttar Pradesh - 201301', phone: '+91 (800) 123-0002' },
-              { city: 'Delhi', address: 'Connaught Place, New Delhi - 110001', phone: '+91 (800) 123-0003' },
-              { city: 'Gurgaon', address: 'Cyber City, DLF Phase 2, Gurgaon, Haryana - 122002', phone: '+91 (800) 123-0004' },
-              { city: 'Mumbai', address: 'Bandra Kurla Complex, Mumbai, Maharashtra - 400051', phone: '+91 (800) 123-0005' },
-              { city: 'Pune', address: 'Hinjewadi Phase 1, Pune, Maharashtra - 411057', phone: '+91 (800) 123-0006' }
-            ].map((dealer, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className="p-6 bg-gradient-to-br from-white/5 to-white/0 backdrop-blur-sm border border-white/10 rounded-xl hover:border-[#00ff88]/30 transition-all duration-300"
-              >
-                <h3 className="text-xl font-bold mb-3 text-white">{dealer.city}</h3>
-                <p className="text-white/60 text-sm mb-2 flex items-start space-x-2">
-                  <MapPin size={16} className="mt-1 flex-shrink-0" />
-                  <span>{dealer.address}</span>
-                </p>
-                <p className="text-white/60 text-sm flex items-center space-x-2">
-                  <Phone size={16} />
-                  <span>{dealer.phone}</span>
-                </p>
-              </motion.div>
-            ))}
-          </div>
+          {/* Dealer locations grid removed as requested */}
         </div>
       </section>
     </div>

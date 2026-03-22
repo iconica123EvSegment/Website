@@ -1,6 +1,7 @@
 import { motion } from 'motion/react';
 import { Target, Eye, Award, Users, Leaf, Zap, Quote } from 'lucide-react';
-import founderImage from '../../assets/6406f25d7354864a57ca2d9d9b9cad9e0c04e7ac.png';
+import founderImageSrc from '../../assets/6406f25d7354864a57ca2d9d9b9cad9e0c04e7ac.png';
+const founderImage = typeof founderImageSrc === 'string' ? founderImageSrc : founderImageSrc.default;
 
 export default function About() {
   const values = [
@@ -31,12 +32,7 @@ export default function About() {
     { year: '2026', title: 'First Launch', description: 'Introduced our flagship models to critical acclaim' }
   ];
 
-  const team = [
-    { role: 'Leadership', count: '50+', description: 'Industry veterans driving innovation' },
-    { role: 'Engineers', count: '200+', description: 'Dedicated to R&D and quality' },
-    { role: 'Riders', count: '100K+', description: 'Happy customers worldwide' },
-    { role: 'Dealers', count: '150+', description: 'Authorized service centers' }
-  ];
+
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-[#0a0b0f] via-[#050507] to-[#0a0b0f]">
@@ -247,39 +243,7 @@ export default function About() {
         </div>
       </section>
 
-      {/* Team Stats */}
-      <section className="py-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-white">The ICONICA Family</h2>
-            <p className="text-xl text-white/60">Powered by passionate people</p>
-          </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {team.map((member, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className="text-center p-8 bg-gradient-to-br from-white/5 to-white/0 backdrop-blur-sm border border-white/10 rounded-2xl"
-              >
-                <div className="text-5xl font-bold mb-2 bg-gradient-to-r from-[#00ff88] to-[#00d4aa] bg-clip-text text-transparent">
-                  {member.count}
-                </div>
-                <h3 className="text-xl font-bold mb-2 text-white">{member.role}</h3>
-                <p className="text-white/60 text-sm">{member.description}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* CTA */}
       <section className="py-24 bg-gradient-to-b from-transparent to-[#050507]">

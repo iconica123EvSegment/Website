@@ -35,7 +35,7 @@ export const vehicles: Vehicle[] = [
   {
     id: 'zylo',
     name: 'Iconic Zylo',
-    model: 'EV Motors PRINCE',
+    model: 'ZYLO',
     category: 'Low Speed',
     tagline: 'Premium Urban Commuting',
     description: 'Premium electric scooter with BLDC hub motor and dual tube suspension. Designed for smooth urban commuting with modern styling.',
@@ -63,7 +63,7 @@ export const vehicles: Vehicle[] = [
   {
     id: 'vexo',
     name: 'Iconic Vexo',
-    model: 'EV Motors GRACE',
+    model: 'VEXO',
     category: 'Low Speed',
     tagline: 'Graceful City Mobility',
     description: 'Elegant design with reliable performance for daily urban commuting. Features modern styling and premium comfort.',
@@ -73,7 +73,7 @@ export const vehicles: Vehicle[] = [
     batteryType: 'Lead Acid',
     voltage: '60-72V',
     price: 54999,
-    image: '/vehicle/zylo.png',
+    image: '/vehicle/a.png',
     images: [
       '/vehicle/a.png',
       '/vehicle/b.png',
@@ -91,7 +91,7 @@ export const vehicles: Vehicle[] = [
   {
     id: 'navo',
     name: 'Iconic Navo',
-    model: 'EV Motors EVITA PRO',
+    model: 'NAVO',
     category: 'Low Speed',
     tagline: 'Navigate Your Future',
     description: 'Advanced version with improved performance and premium urban ride comfort. Perfect for daily commuters.',
@@ -101,7 +101,7 @@ export const vehicles: Vehicle[] = [
     batteryType: 'Lead Acid',
     voltage: '60-72V',
     price: 56999,
-    image: '/vehicle/zylo.png',
+    image: '/vehicle/b.png',
     images: [
       '/vehicle/a.png',
       '/vehicle/b.png',
@@ -119,7 +119,7 @@ export const vehicles: Vehicle[] = [
   {
     id: 'vira',
     name: 'Iconic Vira',
-    model: 'EV Motors ENERGY PRO',
+    model: 'VIRA',
     category: 'Low Speed',
     tagline: 'Reliable Energy',
     description: 'Reliable scooter with strong braking and smooth suspension for daily use. Built for comfort and efficiency.',
@@ -129,7 +129,7 @@ export const vehicles: Vehicle[] = [
     batteryType: 'Lead Acid',
     voltage: '60-72V',
     price: 55999,
-    image: '/vehicle/zylo.png',
+    image: '/vehicle/vexo.png',
     images: [
       '/vehicle/a.png',
       '/vehicle/b.png',
@@ -147,7 +147,7 @@ export const vehicles: Vehicle[] = [
   {
     id: 'zeno',
     name: 'Iconic Zeno',
-    model: 'EV Motors GLIDE',
+    model: 'ZENO',
     category: 'Low Speed',
     tagline: 'Smooth Gliding Experience',
     description: 'Balanced scooter offering performance + comfort for city riders. Perfect blend of style and functionality.',
@@ -175,7 +175,7 @@ export const vehicles: Vehicle[] = [
   {
     id: 'ravo',
     name: 'Iconica Ravo',
-    model: 'EV Motors WINNER PRO',
+    model: 'RAVO',
     category: 'Low Speed',
     tagline: 'Winner in Every Way',
     description: 'Versatile low-speed scooter with multiple voltage options. Built to win your daily commute.',
@@ -185,7 +185,7 @@ export const vehicles: Vehicle[] = [
     batteryType: 'Lead Acid',
     voltage: '48V / 60V / 72V',
     price: 52999,
-    image: '/vehicle/zylo.png',
+    image: '/vehicle/a.png',
     images: [
       '/vehicle/a.png',
       '/vehicle/b.png',
@@ -205,7 +205,7 @@ export const vehicles: Vehicle[] = [
   {
     id: 'zylo-hs',
     name: 'Iconica Zylo HS',
-    model: 'EV Motors ZYLO PRO',
+    model: 'ZYLO HS',
     category: 'High Speed',
     tagline: 'High-Speed Performance',
     description: 'Upgraded high-speed variant with powerful motor and advanced features. Experience the thrill of speed with cutting-edge technology.',
@@ -217,7 +217,7 @@ export const vehicles: Vehicle[] = [
     voltage: '72V',
     chargingTime: 4.5,
     price: 89999,
-    image: '/vehicle/zylo.png',
+    image: '/vehicle/b.png',
     images: [
       '/vehicle/a.png',
       '/vehicle/b.png',
@@ -235,7 +235,7 @@ export const vehicles: Vehicle[] = [
   {
     id: 'vexo-hs',
     name: 'Iconica Vexo HS',
-    model: 'EV Motors VEXO PRO',
+    model: 'VEXO HS',
     category: 'High Speed',
     tagline: 'Velocity Unleashed',
     description: 'High-speed variant with sporty design and premium features. Built for riders who demand both speed and style.',
@@ -247,7 +247,7 @@ export const vehicles: Vehicle[] = [
     voltage: '72V',
     chargingTime: 4.5,
     price: 89999,
-    image: '/vehicle/zylo.png',
+    image: '/vehicle/vexo.png',
     images: [
       '/vehicle/a.png',
       '/vehicle/b.png',
@@ -265,7 +265,7 @@ export const vehicles: Vehicle[] = [
   {
     id: 'vira-hs',
     name: 'Iconica Vira HS',
-    model: 'EV Motors VIRA PRO',
+    model: 'VIRA HS',
     category: 'High Speed',
     tagline: 'High-Speed Performance',
     description: 'High-speed variant with advanced features.',
@@ -295,7 +295,7 @@ export const vehicles: Vehicle[] = [
   {
     id: 'xfactor',
     name: 'Iconica X-Factor',
-    model: 'Premium High-Speed Smart Scooter',
+    model: 'X-Factor',
     category: 'High Speed',
     tagline: 'The Ultimate Experience',
     description: 'Premium high-speed smart scooter with advanced connectivity and safety features. The pinnacle of electric scooter technology.',
@@ -307,7 +307,7 @@ export const vehicles: Vehicle[] = [
     voltage: '72V',
     chargingTime: 5,
     price: 129999,
-    image: '/vehicle/zylo.png',
+    image: '/vehicle/a.png',
     images: [
       '/vehicle/a.png',
       '/vehicle/b.png',

@@ -34,13 +34,13 @@ export default function Contact() {
     {
       icon: Mail,
       title: 'Email',
-      details: ['hello@iconica.com', 'support@iconica.com'],
+      details: ['ceo@iconicaglobal.com'],
       color: '#00ff88'
     },
     {
       icon: Phone,
       title: 'Phone',
-      details: ['+91 (800) 123-4567', '+91 (800) 123-4568'],
+      details: ['+91 93107663990'],
       color: '#00d4aa'
     },
     {
@@ -253,13 +253,13 @@ export default function Contact() {
                   Need immediate assistance? Our support team is available to help you with any questions or concerns.
                 </p>
                 <div className="space-y-4">
-                  <a href="mailto:support@iconica.com" className="flex items-center space-x-3 text-[#00ff88] hover:text-[#00d4aa] transition-colors">
+                  <a href="mailto:ceo@iconicaglobal.com" className="flex items-center space-x-3 text-[#00ff88] hover:text-[#00d4aa] transition-colors">
                     <Mail size={20} />
-                    <span>support@iconica.com</span>
+                    <span>ceo@iconicaglobal.com</span>
                   </a>
-                  <a href="tel:+15551234567" className="flex items-center space-x-3 text-[#00ff88] hover:text-[#00d4aa] transition-colors">
+                  <a href="tel:+919310763990" className="flex items-center space-x-3 text-[#00ff88] hover:text-[#00d4aa] transition-colors">
                     <Phone size={20} />
-                    <span>+1 (555) 123-4567</span>
+                    <span>+91 9310763990</span>
                   </a>
                 </div>
               </div>

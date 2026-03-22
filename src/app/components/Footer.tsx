@@ -1,6 +1,7 @@
 import { Link } from 'react-router';
 import { Facebook, Twitter, Instagram, Linkedin, Mail, Phone, MapPin } from 'lucide-react';
-import iconicaLogo from '../../assets/00ae5a5bf96ad0a467a78b5cb2dac25336ad0c63.png';
+import iconicaLogoSrc from '../../assets/00ae5a5bf96ad0a467a78b5cb2dac25336ad0c63.png';
+const iconicaLogo = typeof iconicaLogoSrc === 'string' ? iconicaLogoSrc : iconicaLogoSrc.default;
 import { vehicles } from '../data/vehicles';
 import { useState } from 'react';
 
@@ -148,11 +149,11 @@ export function Footer() {
               </li>
               <li className="flex items-center space-x-3 text-sm text-white/60">
                 <Phone size={18} className="flex-shrink-0" />
-                <span>+91 (800) 123-4567</span>
+                <span>+91 9310763390</span>
               </li>
               <li className="flex items-center space-x-3 text-sm text-white/60">
                 <Mail size={18} className="flex-shrink-0" />
-                <span>hello@iconica.com</span>
+                <span>ceo@iconicaglobal.com</span>
               </li>
             </ul>
           </div>
