@@ -1,0 +1,53 @@
+@import './fonts.css';
+@import './tailwind.css';
+@import './theme.css';
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0a0b0f;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #00ff88, #00d4aa);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #00d4aa, #00e5ff);
+}
+
+/* Selection */
+::selection {
+  background-color: rgba(0, 255, 136, 0.3);
+  color: #ffffff;
+}
+
+/* Glassmorphism utility */
+.glass {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Glow animations */
+@keyframes glow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(0, 255, 136, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(0, 255, 136, 0.6);
+  }
+}
+
+.glow-effect {
+  animation: glow 2s ease-in-out infinite;
+}
