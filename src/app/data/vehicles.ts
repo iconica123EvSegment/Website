@@ -45,7 +45,7 @@ export const vehicles: Vehicle[] = [
     batteryType: 'Lead Acid',
     voltage: '60-72V',
     price: 54999,
-    image: heroScooter1,
+    image: '/vehicle/zylo.png',
     images: [
       '/vehicle/a.png',
       '/vehicle/b.png',
@@ -73,7 +73,7 @@ export const vehicles: Vehicle[] = [
     batteryType: 'Lead Acid',
     voltage: '60-72V',
     price: 54999,
-    image: heroScooter2,
+    image: '/vehicle/zylo.png',
     images: [
       '/vehicle/a.png',
       '/vehicle/b.png',
@@ -101,7 +101,7 @@ export const vehicles: Vehicle[] = [
     batteryType: 'Lead Acid',
     voltage: '60-72V',
     price: 56999,
-    image: 'https://images.unsplash.com/photo-1609682243212-7b5d77f37ccb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxlbGVjdHJpYyUyMHNjb290ZXIlMjBzdHVkaW8lMjBkYXJrJTIwYmFja2dyb3VuZHxlbnwxfHx8fDE3NzM0ODgyNDF8MA&ixlib=rb-4.1.0&q=80&w=1080',
+    image: '/vehicle/zylo.png',
     images: [
       '/vehicle/a.png',
       '/vehicle/b.png',
@@ -129,8 +129,13 @@ export const vehicles: Vehicle[] = [
     batteryType: 'Lead Acid',
     voltage: '60-72V',
     price: 55999,
-    image: heroScooter1,
-    images: [heroScooter1, heroScooter2, heroScooter1, heroScooter2],
+    image: '/vehicle/zylo.png',
+    images: [
+      '/vehicle/a.png',
+      '/vehicle/b.png',
+      '/vehicle/vexo.png',
+      '/vehicle/zylo.png'
+    ],
     features: ['LED Headlight', 'Alloy Wheels', 'USB Charging Port', 'Micro Charger with Auto Cut-off'],
     detailedSpecs: {
       brakes: 'Disc (Front & Rear)',
@@ -152,7 +157,7 @@ export const vehicles: Vehicle[] = [
     batteryType: 'Lead Acid',
     voltage: '60-72V',
     price: 54999,
-    image: 'https://images.unsplash.com/photo-1675186403510-555b502fa699?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjBlbGVjdHJpYyUyMHNjb290ZXIlMjBibHVlJTIwdGVhbHxlbnwxfHx8fDE3NzM0ODgyNDB8MA&ixlib=rb-4.1.0&q=80&w=1080',
+    image: '/vehicle/zylo.png',
     images: [
       '/vehicle/a.png',
       '/vehicle/b.png',
@@ -180,7 +185,7 @@ export const vehicles: Vehicle[] = [
     batteryType: 'Lead Acid',
     voltage: '48V / 60V / 72V',
     price: 52999,
-    image: 'https://images.unsplash.com/photo-1631009640015-918990ad1914?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxlbGVjdHJpYyUyMHNjb290ZXIlMjB0ZWNobm9sb2d5fGVufDF8fHx8MTc3MzQ4ODI0Mnww&ixlib=rb-4.1.0&q=80&w=1080',
+    image: '/vehicle/zylo.png',
     images: [
       '/vehicle/a.png',
       '/vehicle/b.png',
@@ -212,7 +217,7 @@ export const vehicles: Vehicle[] = [
     voltage: '72V',
     chargingTime: 4.5,
     price: 89999,
-    image: 'https://images.unsplash.com/photo-1655432244940-c361ff5e441f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxmdXR1cmlzdGljJTIwbW9iaWxpdHklMjBzY29vdGVyfGVufDF8fHx8MTc3MzQ4ODI0M3ww&ixlib=rb-4.1.0&q=80&w=1080',
+    image: '/vehicle/zylo.png',
     images: [
       '/vehicle/a.png',
       '/vehicle/b.png',
@@ -242,12 +247,12 @@ export const vehicles: Vehicle[] = [
     voltage: '72V',
     chargingTime: 4.5,
     price: 89999,
-    image: 'https://images.unsplash.com/photo-1759213215109-081f2c1f67de?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxlbGVjdHJpYyUyMHNjb290ZXIlMjB1cmJhbiUyMG1vYmlsaXR5fGVufDF8fHx8MTc3MzQ4ODI0Mnww&ixlib=rb-4.1.0&q=80&w=1080',
+    image: '/vehicle/zylo.png',
     images: [
-      'https://images.unsplash.com/photo-1759213215109-081f2c1f67de?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxlbGVjdHJpYyUyMHNjb290ZXIlMjB1cmJhbiUyMG1vYmlsaXR5fGVufDF8fHx8MTc3MzQ4ODI0Mnww&ixlib=rb-4.1.0&q=80&w=1080',
-      'https://images.unsplash.com/photo-1623079400394-f07956928c3f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxlbGVjdHJpYyUyMHNjb290ZXIlMjBkZXRhaWwlMjBjbG9zZSUyMHVwfGVufDF8fHx8MTc3MzQ5MjgzMHww&ixlib=rb-4.1.0&q=80&w=1080',
-      'https://images.unsplash.com/photo-1696327461171-2b341c349c9c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxlbGVjdHJpYyUyMHNjb290ZXIlMjBzdHVkaW8lMjB3aGl0ZXxlbnwxfHx8fDE3NzM0OTI4MzB8MA&ixlib=rb-4.1.0&q=80&w=1080',
-      'https://images.unsplash.com/photo-1675186403510-555b502fa699?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjBlbGVjdHJpYyUyMHNjb290ZXIlMjBibHVlJTIwdGVhbHxlbnwxfHx8fDE3NzM0ODgyNDB8MA&ixlib=rb-4.1.0&q=80&w=1080'
+      '/vehicle/a.png',
+      '/vehicle/b.png',
+      '/vehicle/vexo.png',
+      '/vehicle/zylo.png'
     ],
     features: ['Digital Display', 'Keyless Start', 'Anti-theft Alarm', 'Reverse Mode', 'USB Charging'],
     detailedSpecs: {
@@ -272,7 +277,7 @@ export const vehicles: Vehicle[] = [
     voltage: '72V',
     chargingTime: 4.5,
     price: 94999,
-    image: heroScooter2,
+    image: '/vehicle/zylo.png',
     images: [
       '/vehicle/a.png',
       '/vehicle/b.png',
@@ -302,7 +307,7 @@ export const vehicles: Vehicle[] = [
     voltage: '72V',
     chargingTime: 5,
     price: 129999,
-    image: 'https://images.unsplash.com/photo-1656639334323-3fbb64a1686a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxlbGVjdHJpYyUyMHNjb290ZXIlMjByaWRlcnxlbnwxfHx8fDE3NzM0ODgyNDN8MA&ixlib=rb-4.1.0&q=80&w=1080',
+    image: '/vehicle/zylo.png',
     images: [
       '/vehicle/a.png',
       '/vehicle/b.png',
