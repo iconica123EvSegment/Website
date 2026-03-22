@@ -45,12 +45,12 @@ export const vehicles: Vehicle[] = [
     batteryType: 'Lead Acid',
     voltage: '60-72V',
     price: 54999,
-    image: '/vehicle/zylo.png',
+    image: '/public/zylo.png',
     images: [
-      '/vehicle/a.png',
-      '/vehicle/b.png',
-      '/vehicle/vexo.png',
-      '/vehicle/zylo.png'
+      '/public/a.png',
+      '/public/b.png',
+      '/public/vexo.png',
+      '/public/zylo.png'
     ],
     features: ['LED Headlight', 'Alloy Wheels', 'USB Charging Port', 'Micro Charger with Auto Cut-off'],
     detailedSpecs: {
@@ -73,12 +73,12 @@ export const vehicles: Vehicle[] = [
     batteryType: 'Lead Acid',
     voltage: '60-72V',
     price: 54999,
-    image: '/vehicle/a.png',
+    image: '/public/a.png',
     images: [
-      '/vehicle/a.png',
-      '/vehicle/b.png',
-      '/vehicle/vexo.png',
-      '/vehicle/zylo.png'
+      '/public/a.png',
+      '/public/b.png',
+      '/public/vexo.png',
+      '/public/zylo.png'
     ],
     features: ['LED Headlight', 'Alloy Wheels', 'USB Charging Port', 'Micro Charger with Auto Cut-off'],
     detailedSpecs: {
@@ -101,12 +101,12 @@ export const vehicles: Vehicle[] = [
     batteryType: 'Lead Acid',
     voltage: '60-72V',
     price: 56999,
-    image: '/vehicle/b.png',
+    image: '/public/b.png',
     images: [
-      '/vehicle/a.png',
-      '/vehicle/b.png',
-      '/vehicle/vexo.png',
-      '/vehicle/zylo.png'
+      '/public/a.png',
+      '/public/b.png',
+      '/public/vexo.png',
+      '/public/zylo.png'
     ],
     features: ['LED Headlight', 'Alloy Wheels', 'USB Charging Port', 'Micro Charger with Auto Cut-off'],
     detailedSpecs: {
@@ -129,12 +129,12 @@ export const vehicles: Vehicle[] = [
     batteryType: 'Lead Acid',
     voltage: '60-72V',
     price: 55999,
-    image: '/vehicle/vexo.png',
+    image: '/public/vexo.png',
     images: [
-      '/vehicle/a.png',
-      '/vehicle/b.png',
-      '/vehicle/vexo.png',
-      '/vehicle/zylo.png'
+      '/public/a.png',
+      '/public/b.png',
+      '/public/vexo.png',
+      '/public/zylo.png'
     ],
     features: ['LED Headlight', 'Alloy Wheels', 'USB Charging Port', 'Micro Charger with Auto Cut-off'],
     detailedSpecs: {
@@ -157,12 +157,12 @@ export const vehicles: Vehicle[] = [
     batteryType: 'Lead Acid',
     voltage: '60-72V',
     price: 54999,
-    image: '/vehicle/zylo.png',
+    image: '/public/zylo.png',
     images: [
-      '/vehicle/a.png',
-      '/vehicle/b.png',
-      '/vehicle/vexo.png',
-      '/vehicle/zylo.png'
+      '/public/a.png',
+      '/public/b.png',
+      '/public/vexo.png',
+      '/public/zylo.png'
     ],
     features: ['LED Headlight', 'Alloy Wheels', 'USB Charging Port', 'Micro Charger with Auto Cut-off'],
     detailedSpecs: {
@@ -185,12 +185,12 @@ export const vehicles: Vehicle[] = [
     batteryType: 'Lead Acid',
     voltage: '48V / 60V / 72V',
     price: 52999,
-    image: '/vehicle/a.png',
+    image: '/public/a.png',
     images: [
-      '/vehicle/a.png',
-      '/vehicle/b.png',
-      '/vehicle/vexo.png',
-      '/vehicle/zylo.png'
+      '/public/a.png',
+      '/public/b.png',
+      '/public/vexo.png',
+      '/public/zylo.png'
     ],
     features: ['LED Headlight', 'Alloy Wheels', 'USB Charging Port', 'Micro Charger with Auto Cut-off'],
     detailedSpecs: {
@@ -217,12 +217,12 @@ export const vehicles: Vehicle[] = [
     voltage: '72V',
     chargingTime: 4.5,
     price: 89999,
-    image: '/vehicle/b.png',
+    image: '/public/b.png',
     images: [
-      '/vehicle/a.png',
-      '/vehicle/b.png',
-      '/vehicle/vexo.png',
-      '/vehicle/zylo.png'
+      '/public/a.png',
+      '/public/b.png',
+      '/public/vexo.png',
+      '/public/zylo.png'
     ],
     features: ['Digital Display', 'Keyless Start', 'Anti-theft Alarm', 'Reverse Mode', 'USB Charging'],
     detailedSpecs: {
@@ -247,12 +247,12 @@ export const vehicles: Vehicle[] = [
     voltage: '72V',
     chargingTime: 4.5,
     price: 89999,
-    image: '/vehicle/vexo.png',
+    image: '/public/vexo.png',
     images: [
-      '/vehicle/a.png',
-      '/vehicle/b.png',
-      '/vehicle/vexo.png',
-      '/vehicle/zylo.png'
+      '/public/a.png',
+      '/public/b.png',
+      '/public/vexo.png',
+      '/public/zylo.png'
     ],
     features: ['Digital Display', 'Keyless Start', 'Anti-theft Alarm', 'Reverse Mode', 'USB Charging'],
     detailedSpecs: {
@@ -277,12 +277,12 @@ export const vehicles: Vehicle[] = [
     voltage: '72V',
     chargingTime: 4.5,
     price: 94999,
-    image: '/vehicle/zylo.png',
+    image: '/public/zylo.png',
     images: [
-      '/vehicle/a.png',
-      '/vehicle/b.png',
-      '/vehicle/vexo.png',
-      '/vehicle/zylo.png'
+      '/public/a.png',
+      '/public/b.png',
+      '/public/vexo.png',
+      '/public/zylo.png'
     ],
     features: ['Digital Display', 'Keyless Start', 'Anti-theft Alarm', 'Reverse Mode', 'USB Charging'],
     detailedSpecs: {
@@ -307,12 +307,12 @@ export const vehicles: Vehicle[] = [
     voltage: '72V',
     chargingTime: 5,
     price: 129999,
-    image: '/vehicle/a.png',
+    image: '/public/a.png',
     images: [
-      '/vehicle/a.png',
-      '/vehicle/b.png',
-      '/vehicle/vexo.png',
-      '/vehicle/zylo.png'
+      '/public/a.png',
+      '/public/b.png',
+      '/public/vexo.png',
+      '/public/zylo.png'
     ],
     features: ['Smart App Connectivity', 'GPS Tracking', 'Geo-fencing', 'Ride Analytics', 'Regenerative Braking', 'Anti-theft System'],
     detailedSpecs: {

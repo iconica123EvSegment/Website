@@ -273,11 +273,11 @@ export default function TestRide() {
                 <div className="space-y-3 text-white/80">
                   <p className="flex items-center space-x-2">
                     <Phone size={18} className="text-[#00ff88]" />
-                    <span>+1 (555) 123-4567</span>
+                    <span>+91 9310763990</span>
                   </p>
                   <p className="flex items-center space-x-2">
                     <Mail size={18} className="text-[#00ff88]" />
-                    <span>testride@iconica.com</span>
+                    <span>ceo@iconicaglobal.com</span>
                   </p>
                 </div>
               </div>
