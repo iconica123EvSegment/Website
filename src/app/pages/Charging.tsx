@@ -1,4 +1,5 @@
 import { motion } from 'motion/react';
+import batteryCompare from '../../assets/battery_compare.png';
 import { Battery, Zap, Clock, Shield, TrendingUp, Repeat, CheckCircle2, XCircle } from 'lucide-react';
 import { GlowButton } from '../components/GlowButton';
 
@@ -140,7 +141,7 @@ export default function Charging() {
             className="relative max-w-4xl mx-auto px-4"
           >
             <img 
-              src="https://images.unsplash.com/photo-1672542128826-5f0d578713d2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxlbGVjdHJpYyUyMHZlaGljbGUlMjBjaGFyZ2luZyUyMHN0YXRpb258ZW58MXx8fHwxNzczNDE3MjUyfDA&ixlib=rb-4.1.0&q=80&w=1080" 
+              src={batteryCompare}
               alt="Battery Swap"
               className="rounded-2xl shadow-2xl w-full"
             />

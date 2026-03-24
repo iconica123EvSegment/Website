@@ -15,6 +15,7 @@ import {
 } from 'lucide-react';
 import heroScooter1 from '../../assets/703c3ea87de11d404d32fe65ec1b6f945ee11d45.png';
 import heroScooter2 from '../../assets/2e21e76cea61835ee54bfc253a56436d58d437b3.png';
+import batteryCompare from '../../assets/battery_compare.png';
 import { useState, useEffect } from 'react';
 
 export default function Home() {
@@ -337,8 +338,8 @@ export default function Home() {
               className="order-2 lg:order-1"
             >
               <img 
-                src="https://images.unsplash.com/photo-1672542128826-5f0d578713d2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxlbGVjdHJpYyUyMHZlaGljbGUlMjBjaGFyZ2luZyUyMHN0YXRpb258ZW58MXx8fHwxNzczNDE3MjUyfDA&ixlib=rb-4.1.0&q=80&w=1080" 
-                alt="Charging"
+                src={batteryCompare}
+                alt="Battery Comparison"
                 className="rounded-2xl shadow-2xl"
               />
             </motion.div>
@@ -349,27 +350,23 @@ export default function Home() {
               viewport={{ once: true }}
               className="order-1 lg:order-2"
             >
-              <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">Charging Ecosystem</h2>
+              <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">Battery Technology</h2>
               <p className="text-xl text-white/60 mb-8">
-                Convenient charging solutions designed for your lifestyle
+                Advanced battery solutions designed for performance, durability, and efficiency
               </p>
               
               <div className="space-y-4">
                 <div className="p-6 bg-gradient-to-br from-[#00ff88]/10 to-transparent border border-[#00ff88]/30 rounded-xl">
-                  <h3 className="text-xl font-bold mb-2 text-white">Home Charging</h3>
-                  <p className="text-white/60">Simple plug-and-charge with any standard outlet</p>
+                  <h3 className="text-xl font-bold mb-2 text-white">Lithium-ion Battery</h3>
+                  <p className="text-white/60">High-speed battery with superior range, fast charging, and long lifespan for modern electric vehicles</p>
                 </div>
                 <div className="p-6 bg-gradient-to-br from-[#00d4aa]/10 to-transparent border border-[#00d4aa]/30 rounded-xl">
-                  <h3 className="text-xl font-bold mb-2 text-white">Public Charging Network</h3>
-                  <p className="text-white/60">Access thousands of charging stations nationwide</p>
+                  <h3 className="text-xl font-bold mb-2 text-white">Lead Acid Battery</h3>
+                  <p className="text-white/60">Cost-effective battery solution ideal for low-speed usage with proven durability and easy maintenance</p>
                 </div>
                 <div className="p-6 bg-gradient-to-br from-[#00e5ff]/10 to-transparent border border-[#00e5ff]/30 rounded-xl">
-                  <h3 className="text-xl font-bold mb-2 text-white">Fast Charging</h3>
-                  <p className="text-white/60">Get 80% charge in under 2 hours with fast charging</p>
-                </div>
-                <div className="p-6 bg-gradient-to-br from-[#ffeb3b]/10 to-transparent border border-[#ffeb3b]/30 rounded-xl">
-                  <h3 className="text-xl font-bold mb-2 text-white">Battery Swap</h3>
-                  <p className="text-white/60">Swap your empty battery for a fully charged one in minutes at partner stations—no waiting, just ride!</p>
+                  <h3 className="text-xl font-bold mb-2 text-white">Charging Efficiency</h3>
+                  <p className="text-white/60">Optimized charging technology delivering quick recharge times and maximum energy efficiency</p>
                 </div>
               </div>
             </motion.div>
