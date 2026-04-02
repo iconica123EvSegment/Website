@@ -307,9 +307,9 @@ export const vehicles: Vehicle[] = [
     voltage: '72V',
     chargingTime: 5,
     price: 129999,
-    image: '/a.png',
+    image: '/xfactor.png',
     images: [
-      '/a.png',
+      '/xfactor.png',
       '/dashboard.png',
       '/wheel.png',
       '/seat.png'
