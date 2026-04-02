@@ -317,7 +317,7 @@ export default function Home() {
               className="relative"
             >
               <img 
-                src="https://images.unsplash.com/photo-1631009640015-918990ad1914?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxlbGVjdHJpYyUyMHNjb290ZXIlMjB0ZWNobm9sb2d5fGVufDF8fHx8MTc3MzQ4ODI0Mnww&ixlib=rb-4.1.0&q=80&w=1080" 
+                src="/smart.png" 
                 alt="Smart Technology"
                 className="rounded-2xl shadow-2xl"
               />
