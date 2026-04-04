@@ -1,113 +1,99 @@
 import { motion } from 'motion/react';
-import batteryCompare from '../../assets/battery_compare.png';
-import { Battery, Zap, Clock, Shield, TrendingUp, Repeat, CheckCircle2, XCircle } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import {
+  Zap,
+  Home,
+  Plug,
+  Shield,
+  TrendingUp,
+  CheckCircle2,
+  Battery,
+  Clock,
+  Wifi,
+  ThermometerSun,
+  Globe
+} from 'lucide-react';
 import { GlowButton } from '../components/GlowButton';
 
 export default function Charging() {
-  const swapBenefits = [
+  const chargingBenefits = [
     {
-      icon: Zap,
-      title: 'Instant Swap',
-      description: 'Replace your depleted battery with a fully charged one in under 2 minutes',
+      icon: Plug,
+      title: 'Plug & Charge',
+      description: 'Simply plug into any standard home socket - no special setup required',
       color: '#00ff88'
     },
     {
-      icon: Clock,
-      title: 'Zero Downtime',
-      description: 'No waiting for charging - get back on the road immediately',
+      icon: Home,
+      title: 'Charge at Home',
+      description: 'Power up overnight at home, office, or anywhere with a power outlet',
       color: '#00d4aa'
     },
     {
-      icon: Repeat,
-      title: 'Unlimited Range',
-      description: 'Swap as many times as needed for unlimited daily range',
+      icon: Clock,
+      title: 'Overnight Ready',
+      description: 'Wake up to a fully charged scooter every morning',
       color: '#00e5ff'
     },
     {
       icon: Shield,
-      title: 'Battery Health',
-      description: 'Professionally maintained batteries ensure optimal performance',
+      title: 'Smart & Safe',
+      description: 'Intelligent charging system with overcharge and temperature protection',
       color: '#00ff88'
     }
   ];
 
-  const batteryComparison = {
-    lithiumIon: {
-      type: 'Lithium-ion',
-      usedIn: 'High-Speed Models (Zylo HS, Vexo HS, X-Factor)',
-      pros: [
-        'High energy density - more range per charge',
-        'Longer lifespan (2000+ charge cycles)',
-        'Lightweight and compact design',
-        'Fast charging capability (4-5 hours)',
-        'Low self-discharge rate',
-        'Better performance in varying temperatures',
-        'Eco-friendly with recyclable materials'
-      ],
-      cons: [
-        'Higher initial cost',
-        'Requires proper disposal/recycling',
-        'Sensitive to extreme temperatures'
-      ],
-      specs: {
-        voltage: '72V',
-        range: '90-150 km/charge',
-        weight: 'Lighter',
-        lifespan: '5-7 years',
-        charging: '4-5 hours'
-      },
-      color: '#00ff88'
+  const inHouseFeatures = [
+    {
+      icon: Battery,
+      title: 'In-House Engineering',
+      description: 'Batteries designed and developed by ICONICA for maximum reliability',
+      details: [
+        'Higher efficiency & performance',
+        'Enhanced safety systems',
+        'Longer battery lifespan',
+        'Smart power management'
+      ]
     },
-    leadAcid: {
-      type: 'Lead Acid',
-      usedIn: 'Low-Speed Models (Zylo, Vexo, Navo, Vira, Zeno, Ravo)',
-      pros: [
-        'Lower initial cost - affordable option',
-        'Proven and reliable technology',
-        'Widely available and easy to replace',
-        'Good performance for low-speed applications',
-        'Robust and durable construction',
-        'Works well in various weather conditions'
-      ],
-      cons: [
-        'Heavier weight affects handling',
-        'Lower energy density - less range',
-        'Shorter lifespan (300-500 cycles)',
-        'Requires regular maintenance',
-        'Slower charging times',
-        'Contains toxic materials (requires proper disposal)'
-      ],
-      specs: {
-        voltage: '48V / 60V / 72V',
-        range: '40-60 km/charge',
-        weight: 'Heavier',
-        lifespan: '2-3 years',
-        charging: '6-8 hours'
-      },
-      color: '#00d4aa'
+    {
+      icon: Shield,
+      title: 'Advanced Safety',
+      description: 'Multi-layer protection for worry-free charging',
+      details: [
+        'Overcharge protection',
+        'Temperature control',
+        'Stable power flow',
+        'Battery health monitoring'
+      ]
     }
-  };
+  ];
 
-  const swapSteps = [
+  const smartFeatures = [
+    'Protection against overcharging',
+    'Temperature control for battery safety',
+    'Stable and efficient power flow',
+    'Long-term battery health preservation',
+    'Compact & portable charger',
+    'Works with regular power outlets',
+    'Safe and optimized for Indian households',
+    'Designed for overnight charging'
+  ];
+
+  const freedomPoints = [
     {
-      step: '1',
-      title: 'Locate Station',
-      description: 'Find the nearest battery swap station using our mobile app'
+      icon: Globe,
+      title: 'No Infrastructure Dependency',
+      description: 'No need to search for charging stations or wait in queues'
     },
     {
-      step: '2',
-      title: 'Remove Battery',
-      description: 'Unlock and remove your depleted battery from the scooter'
+      icon: Zap,
+      title: 'Zero Range Anxiety',
+      description: 'Charge overnight and ride all day with confidence'
     },
     {
-      step: '3',
-      title: 'Insert Charged Battery',
-      description: 'Pick a fully charged battery from the station and insert it'
-    },
-    {
-      step: '4',
-      title: 'Go',
-      description: 'Lock the battery in place and continue your journey instantly'
+      icon: Home,
+      title: 'Your Space, Your Control',
+      description: 'Complete flexibility in your daily commute'
     }
   ];
 
@@ -126,32 +112,30 @@ export default function Charging() {
             animate={{ opacity: 1, y: 0 }}
             className="text-center mb-12 md:mb-16"
           >
+            <motion.div
+              initial={{ scale: 0 }}
+              animate={{ scale: 1 }}
+              transition={{ delay: 0.2, type: "spring" }}
+              className="inline-block mb-6"
+            >
+              <Zap className="w-16 h-16 md:w-20 md:h-20 text-[#00ff88]" />
+            </motion.div>
             <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold mb-4 md:mb-6 bg-gradient-to-r from-[#00ff88] via-[#00d4aa] to-[#00e5ff] bg-clip-text text-transparent">
-              Battery Swap System
+              Charging Made Effortless
             </h1>
-            <p className="text-lg sm:text-xl md:text-2xl text-white/70 max-w-3xl mx-auto px-4">
-              Revolutionary battery swapping technology for instant power and unlimited range
+            <p className="text-xl md:text-3xl text-white mb-6">
+              Power That Fits Your Life
             </p>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2 }}
-            className="relative max-w-4xl mx-auto px-4"
-          >
-            <img 
-              src={batteryCompare}
-              alt="Battery Swap"
-              className="rounded-2xl shadow-2xl w-full"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#0a0b0f] via-transparent to-transparent rounded-2xl"></div>
+            <p className="text-lg md:text-xl text-white/70 max-w-4xl mx-auto px-4 leading-relaxed">
+              At ICONICA, we believe charging your scooter should be as simple as charging your phone.
+              That's why every ICONICA scooter comes with our advanced in-house battery technology, designed for convenience, safety, and everyday usability.
+            </p>
           </motion.div>
         </div>
       </section>
 
-      {/* Battery Swap Benefits */}
-      <section className="py-16 md:py-24">
+      {/* Charge Anywhere Section */}
+      <section className="py-16 md:py-24 bg-gradient-to-b from-transparent to-[#050507]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -159,12 +143,17 @@ export default function Charging() {
             viewport={{ once: true }}
             className="text-center mb-12 md:mb-16"
           >
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-white">Why Battery Swapping?</h2>
-            <p className="text-lg sm:text-xl text-white/60 px-4">The future of electric mobility is here</p>
+            <h2 className="text-3xl sm:text-4xl md:text-6xl font-bold mb-6 text-white">
+              🔋 Charge Anywhere. Anytime.
+            </h2>
+            <p className="text-xl md:text-2xl text-white/60 mb-8">
+              No dependency on charging stations.<br />
+              No waiting in long queues.
+            </p>
           </motion.div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
-            {swapBenefits.map((benefit, index) => {
+            {chargingBenefits.map((benefit, index) => {
               const Icon = benefit.icon;
               return (
                 <motion.div
@@ -188,49 +177,40 @@ export default function Charging() {
               );
             })}
           </div>
-        </div>
-      </section>
 
-      {/* How It Works */}
-      <section className="py-16 md:py-24 bg-gradient-to-b from-transparent to-[#050507]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-12 md:mb-16"
+            className="mt-12 text-center"
           >
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-white">How Battery Swap Works</h2>
-            <p className="text-lg sm:text-xl text-white/60 px-4">Simple, fast, and efficient - in just 4 steps</p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
-            {swapSteps.map((item, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className="relative"
-              >
-                <div className="p-6 md:p-8 bg-gradient-to-br from-white/5 to-white/0 backdrop-blur-sm border border-white/10 rounded-2xl hover:border-[#00ff88]/30 transition-all duration-300 h-full">
-                  <div className="w-12 h-12 md:w-16 md:h-16 bg-gradient-to-br from-[#00ff88] to-[#00d4aa] rounded-full flex items-center justify-center mb-4 md:mb-6">
-                    <span className="text-[#0a0b0f] font-bold text-xl md:text-2xl">{item.step}</span>
-                  </div>
-                  <h3 className="text-xl md:text-2xl font-bold mb-3 text-white">{item.title}</h3>
-                  <p className="text-sm md:text-base text-white/60">{item.description}</p>
+            <div className="inline-block p-8 md:p-12 bg-gradient-to-br from-[#00ff88]/10 to-[#00e5ff]/10 backdrop-blur-sm border border-[#00ff88]/30 rounded-3xl">
+              <p className="text-lg md:text-2xl text-white font-semibold mb-4">
+                With ICONICA:
+              </p>
+              <div className="space-y-3 text-left max-w-xl mx-auto">
+                <div className="flex items-center space-x-3">
+                  <CheckCircle2 className="w-6 h-6 text-[#00ff88] flex-shrink-0" />
+                  <span className="text-base md:text-lg text-white">Plug into any standard home socket</span>
                 </div>
-                {index < swapSteps.length - 1 && (
-                  <div className="hidden lg:block absolute top-1/2 -right-4 w-8 h-0.5 bg-gradient-to-r from-[#00ff88] to-transparent"></div>
-                )}
-              </motion.div>
-            ))}
-          </div>
+                <div className="flex items-center space-x-3">
+                  <CheckCircle2 className="w-6 h-6 text-[#00ff88] flex-shrink-0" />
+                  <span className="text-base md:text-lg text-white">Charge at your home, office, or anywhere</span>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <CheckCircle2 className="w-6 h-6 text-[#00ff88] flex-shrink-0" />
+                  <span className="text-base md:text-lg text-white">No special setup required</span>
+                </div>
+              </div>
+              <p className="text-xl md:text-2xl text-[#00ff88] font-bold mt-8">
+                Just plug in and power up.
+              </p>
+            </div>
+          </motion.div>
         </div>
       </section>
 
-      {/* Battery Types Comparison */}
+      {/* Home Charging Simplified */}
       <section className="py-16 md:py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -239,161 +219,237 @@ export default function Charging() {
             viewport={{ once: true }}
             className="text-center mb-12 md:mb-16"
           >
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-white">Battery Technology Comparison</h2>
-            <p className="text-lg sm:text-xl text-white/60 px-4">Choose the right battery type for your needs</p>
+            <h2 className="text-3xl sm:text-4xl md:text-6xl font-bold mb-6 text-white">
+              🏠 Home Charging, Simplified
+            </h2>
+            <p className="text-xl md:text-2xl text-white/60">
+              Your daily routine stays uninterrupted.
+            </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8">
-            {/* Lithium-ion */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {smartFeatures.map((feature, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+                className="flex items-center space-x-3 p-6 bg-gradient-to-br from-white/5 to-white/0 backdrop-blur-sm border border-white/10 rounded-xl hover:border-[#00ff88]/30 transition-all duration-300"
+              >
+                <CheckCircle2 className="w-5 h-5 text-[#00ff88] flex-shrink-0" />
+                <span className="text-sm md:text-base text-white">{feature}</span>
+              </motion.div>
+            ))}
+          </div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="mt-12 text-center"
+          >
+            <p className="text-2xl md:text-3xl text-[#00ff88] font-bold">
+              Wake up to a fully charged ride — every day.
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Built In-House Section */}
+      <section className="py-16 md:py-24 bg-gradient-to-b from-transparent to-[#050507]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-12 md:mb-16"
+          >
+            <h2 className="text-3xl sm:text-4xl md:text-6xl font-bold mb-6 text-white">
+              ⚙️ Built In-House. Built Better.
+            </h2>
+            <p className="text-lg md:text-xl text-white/70 max-w-4xl mx-auto px-4">
+              Unlike generic battery systems, ICONICA uses in-house engineered batteries
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
+            {inHouseFeatures.map((feature, index) => {
+              const Icon = feature.icon;
+              return (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, x: index === 0 ? -30 : 30 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  className="p-8 bg-gradient-to-br from-white/5 to-white/0 backdrop-blur-sm border border-white/10 rounded-2xl hover:border-[#00ff88]/30 transition-all duration-300"
+                >
+                  <Icon className="w-12 h-12 md:w-16 md:h-16 text-[#00ff88] mb-6" />
+                  <h3 className="text-2xl md:text-3xl font-bold mb-4 text-white">{feature.title}</h3>
+                  <p className="text-base md:text-lg text-white/60 mb-6">{feature.description}</p>
+                  <div className="space-y-3">
+                    {feature.details.map((detail, idx) => (
+                      <div key={idx} className="flex items-center space-x-3">
+                        <div className="w-2 h-2 rounded-full bg-[#00ff88]"></div>
+                        <span className="text-sm md:text-base text-white/80">{detail}</span>
+                      </div>
+                    ))}
+                  </div>
+                </motion.div>
+              );
+            })}
+          </div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center p-8 bg-gradient-to-br from-[#00ff88]/10 to-[#00e5ff]/10 backdrop-blur-sm border border-[#00ff88]/30 rounded-3xl"
+          >
+            <p className="text-xl md:text-2xl text-white">
+              This means more <span className="text-[#00ff88] font-bold">reliability</span>, more <span className="text-[#00d4aa] font-bold">control</span>, and more <span className="text-[#00e5ff] font-bold">confidence</span> in every ride.
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Smart Charging Experience */}
+      <section className="py-16 md:py-24">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-12 md:mb-16"
+          >
+            <h2 className="text-3xl sm:text-4xl md:text-6xl font-bold mb-6 text-white">
+              🔌 Smart Charging Experience
+            </h2>
+            <p className="text-xl md:text-2xl text-white/60">
+              Charging isn't just easy — it's smart and secure.
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
-              className="p-6 md:p-8 bg-gradient-to-br from-white/5 to-white/0 backdrop-blur-sm border border-white/10 rounded-2xl hover:border-[#00ff88]/30 transition-all duration-300"
+              className="text-center p-8 bg-gradient-to-br from-white/5 to-white/0 backdrop-blur-sm border border-[#00ff88]/20 rounded-2xl"
             >
-              <div className="flex items-center space-x-4 mb-6">
-                <Battery className="w-10 h-10 md:w-12 md:h-12 text-[#00ff88]" />
-                <div>
-                  <h3 className="text-2xl md:text-3xl font-bold text-white">{batteryComparison.lithiumIon.type}</h3>
-                  <p className="text-sm md:text-base text-white/60 mt-1">{batteryComparison.lithiumIon.usedIn}</p>
-                </div>
-              </div>
-
-              {/* Specs */}
-              <div className="mb-6 p-4 md:p-6 bg-white/5 rounded-xl">
-                <h4 className="text-lg md:text-xl font-bold text-white mb-4">Specifications</h4>
-                <div className="grid grid-cols-2 gap-3 md:gap-4">
-                  <div>
-                    <p className="text-xs md:text-sm text-white/60">Voltage</p>
-                    <p className="text-sm md:text-base text-white font-semibold">{batteryComparison.lithiumIon.specs.voltage}</p>
-                  </div>
-                  <div>
-                    <p className="text-xs md:text-sm text-white/60">Range</p>
-                    <p className="text-sm md:text-base text-white font-semibold">{batteryComparison.lithiumIon.specs.range}</p>
-                  </div>
-                  <div>
-                    <p className="text-xs md:text-sm text-white/60">Weight</p>
-                    <p className="text-sm md:text-base text-white font-semibold">{batteryComparison.lithiumIon.specs.weight}</p>
-                  </div>
-                  <div>
-                    <p className="text-xs md:text-sm text-white/60">Lifespan</p>
-                    <p className="text-sm md:text-base text-white font-semibold">{batteryComparison.lithiumIon.specs.lifespan}</p>
-                  </div>
-                  <div className="col-span-2">
-                    <p className="text-xs md:text-sm text-white/60">Charging Time</p>
-                    <p className="text-sm md:text-base text-white font-semibold">{batteryComparison.lithiumIon.specs.charging}</p>
-                  </div>
-                </div>
-              </div>
-
-              {/* Pros */}
-              <div className="mb-6">
-                <h4 className="text-lg md:text-xl font-bold text-white mb-4 flex items-center">
-                  <CheckCircle2 className="w-5 h-5 md:w-6 md:h-6 mr-2 text-[#00ff88]" />
-                  Advantages
-                </h4>
-                <div className="space-y-2 md:space-y-3">
-                  {batteryComparison.lithiumIon.pros.map((pro, idx) => (
-                    <div key={idx} className="flex items-start space-x-3">
-                      <div className="w-1.5 h-1.5 md:w-2 md:h-2 mt-2 rounded-full bg-[#00ff88] flex-shrink-0"></div>
-                      <span className="text-sm md:text-base text-white/80">{pro}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              {/* Cons */}
-              <div>
-                <h4 className="text-lg md:text-xl font-bold text-white mb-4 flex items-center">
-                  <XCircle className="w-5 h-5 md:w-6 md:h-6 mr-2 text-red-400" />
-                  Considerations
-                </h4>
-                <div className="space-y-2 md:space-y-3">
-                  {batteryComparison.lithiumIon.cons.map((con, idx) => (
-                    <div key={idx} className="flex items-start space-x-3">
-                      <div className="w-1.5 h-1.5 md:w-2 md:h-2 mt-2 rounded-full bg-red-400/60 flex-shrink-0"></div>
-                      <span className="text-sm md:text-base text-white/60">{con}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
+              <Shield className="w-12 h-12 md:w-16 md:h-16 text-[#00ff88] mx-auto mb-4" />
+              <h3 className="text-lg md:text-xl font-bold text-white mb-2">Overcharge Protection</h3>
+              <p className="text-sm text-white/60">Automatically stops when fully charged</p>
             </motion.div>
 
-            {/* Lead Acid */}
             <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
-              className="p-6 md:p-8 bg-gradient-to-br from-white/5 to-white/0 backdrop-blur-sm border border-white/10 rounded-2xl hover:border-[#00d4aa]/30 transition-all duration-300"
+              transition={{ delay: 0.1 }}
+              className="text-center p-8 bg-gradient-to-br from-white/5 to-white/0 backdrop-blur-sm border border-[#00d4aa]/20 rounded-2xl"
             >
-              <div className="flex items-center space-x-4 mb-6">
-                <Battery className="w-10 h-10 md:w-12 md:h-12 text-[#00d4aa]" />
-                <div>
-                  <h3 className="text-2xl md:text-3xl font-bold text-white">{batteryComparison.leadAcid.type}</h3>
-                  <p className="text-sm md:text-base text-white/60 mt-1">{batteryComparison.leadAcid.usedIn}</p>
-                </div>
-              </div>
+              <ThermometerSun className="w-12 h-12 md:w-16 md:h-16 text-[#00d4aa] mx-auto mb-4" />
+              <h3 className="text-lg md:text-xl font-bold text-white mb-2">Temperature Control</h3>
+              <p className="text-sm text-white/60">Monitors heat for safe charging</p>
+            </motion.div>
 
-              {/* Specs */}
-              <div className="mb-6 p-4 md:p-6 bg-white/5 rounded-xl">
-                <h4 className="text-lg md:text-xl font-bold text-white mb-4">Specifications</h4>
-                <div className="grid grid-cols-2 gap-3 md:gap-4">
-                  <div>
-                    <p className="text-xs md:text-sm text-white/60">Voltage</p>
-                    <p className="text-sm md:text-base text-white font-semibold">{batteryComparison.leadAcid.specs.voltage}</p>
-                  </div>
-                  <div>
-                    <p className="text-xs md:text-sm text-white/60">Range</p>
-                    <p className="text-sm md:text-base text-white font-semibold">{batteryComparison.leadAcid.specs.range}</p>
-                  </div>
-                  <div>
-                    <p className="text-xs md:text-sm text-white/60">Weight</p>
-                    <p className="text-sm md:text-base text-white font-semibold">{batteryComparison.leadAcid.specs.weight}</p>
-                  </div>
-                  <div>
-                    <p className="text-xs md:text-sm text-white/60">Lifespan</p>
-                    <p className="text-sm md:text-base text-white font-semibold">{batteryComparison.leadAcid.specs.lifespan}</p>
-                  </div>
-                  <div className="col-span-2">
-                    <p className="text-xs md:text-sm text-white/60">Charging Time</p>
-                    <p className="text-sm md:text-base text-white font-semibold">{batteryComparison.leadAcid.specs.charging}</p>
-                  </div>
-                </div>
-              </div>
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+              className="text-center p-8 bg-gradient-to-br from-white/5 to-white/0 backdrop-blur-sm border border-[#00e5ff]/20 rounded-2xl"
+            >
+              <Zap className="w-12 h-12 md:w-16 md:h-16 text-[#00e5ff] mx-auto mb-4" />
+              <h3 className="text-lg md:text-xl font-bold text-white mb-2">Stable Power Flow</h3>
+              <p className="text-sm text-white/60">Consistent and efficient charging</p>
+            </motion.div>
 
-              {/* Pros */}
-              <div className="mb-6">
-                <h4 className="text-lg md:text-xl font-bold text-white mb-4 flex items-center">
-                  <CheckCircle2 className="w-5 h-5 md:w-6 md:h-6 mr-2 text-[#00d4aa]" />
-                  Advantages
-                </h4>
-                <div className="space-y-2 md:space-y-3">
-                  {batteryComparison.leadAcid.pros.map((pro, idx) => (
-                    <div key={idx} className="flex items-start space-x-3">
-                      <div className="w-1.5 h-1.5 md:w-2 md:h-2 mt-2 rounded-full bg-[#00d4aa] flex-shrink-0"></div>
-                      <span className="text-sm md:text-base text-white/80">{pro}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              {/* Cons */}
-              <div>
-                <h4 className="text-lg md:text-xl font-bold text-white mb-4 flex items-center">
-                  <XCircle className="w-5 h-5 md:w-6 md:h-6 mr-2 text-red-400" />
-                  Considerations
-                </h4>
-                <div className="space-y-2 md:space-y-3">
-                  {batteryComparison.leadAcid.cons.map((con, idx) => (
-                    <div key={idx} className="flex items-start space-x-3">
-                      <div className="w-1.5 h-1.5 md:w-2 md:h-2 mt-2 rounded-full bg-red-400/60 flex-shrink-0"></div>
-                      <span className="text-sm md:text-base text-white/60">{con}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.3 }}
+              className="text-center p-8 bg-gradient-to-br from-white/5 to-white/0 backdrop-blur-sm border border-[#00ff88]/20 rounded-2xl"
+            >
+              <Battery className="w-12 h-12 md:w-16 md:h-16 text-[#00ff88] mx-auto mb-4" />
+              <h3 className="text-lg md:text-xl font-bold text-white mb-2">Battery Health</h3>
+              <p className="text-sm text-white/60">Long-term preservation system</p>
             </motion.div>
           </div>
+        </div>
+      </section>
+
+      {/* Freedom Without Infrastructure */}
+      <section className="py-16 md:py-24 bg-gradient-to-b from-transparent to-[#0a0b0f]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-12 md:mb-16"
+          >
+            <h2 className="text-3xl sm:text-4xl md:text-6xl font-bold mb-6 text-white">
+              🌍 Freedom Without Infrastructure
+            </h2>
+            <p className="text-xl md:text-2xl text-white/60">
+              With ICONICA, you're not dependent on public charging networks.
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+            {freedomPoints.map((point, index) => {
+              const Icon = point.icon;
+              return (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.1 }}
+                  className="text-center p-8 bg-gradient-to-br from-white/5 to-white/0 backdrop-blur-sm border border-white/10 rounded-2xl hover:border-[#00ff88]/30 transition-all duration-300"
+                >
+                  <Icon className="w-12 h-12 md:w-16 md:h-16 text-[#00ff88] mx-auto mb-6" />
+                  <h3 className="text-xl md:text-2xl font-bold mb-4 text-white">{point.title}</h3>
+                  <p className="text-base md:text-lg text-white/60">{point.description}</p>
+                </motion.div>
+              );
+            })}
+          </div>
+
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            className="text-center p-8 bg-gradient-to-br from-[#00ff88]/10 to-[#00e5ff]/10 backdrop-blur-sm border border-[#00ff88]/30 rounded-3xl"
+          >
+            <p className="text-2xl md:text-3xl text-white font-bold">
+              Your charger. Your space. Your control.
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Ready When You Are */}
+      <section className="py-16 md:py-24">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center"
+          >
+            <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-8 text-white">
+              🚀 Ready When You Are
+            </h2>
+            <p className="text-2xl md:text-3xl text-[#00ff88] font-bold mb-8">
+              Charge overnight. Ride all day. Repeat.
+            </p>
+            <p className="text-lg md:text-xl text-white/70 mb-12 max-w-3xl mx-auto">
+              ICONICA is built for a world where mobility is effortless and energy is always within reach.
+            </p>
+          </motion.div>
         </div>
       </section>
 
@@ -406,14 +462,18 @@ export default function Charging() {
             viewport={{ once: true }}
             className="p-8 md:p-12 bg-gradient-to-br from-[#00ff88]/10 to-[#00e5ff]/10 backdrop-blur-sm border border-[#00ff88]/30 rounded-3xl"
           >
-            <TrendingUp className="w-12 h-12 md:w-16 md:h-16 mx-auto mb-6 text-[#00ff88]" />
-            <h2 className="text-3xl sm:text-4xl font-bold mb-6 text-white">Experience the Future Today</h2>
+            <Zap className="w-12 h-12 md:w-16 md:h-16 mx-auto mb-6 text-[#00ff88]" />
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 text-white">Experience Effortless Charging</h2>
             <p className="text-lg sm:text-xl text-white/60 mb-8 px-4">
-              Join the battery swap revolution and never worry about charging time again
+              Join the future of electric mobility with ICONICA
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <GlowButton variant="primary">Find Swap Stations</GlowButton>
-              <GlowButton variant="outline">Learn More</GlowButton>
+              <Link to="/test-ride">
+                <GlowButton variant="primary">Book a Test Ride</GlowButton>
+              </Link>
+              <Link to="/vehicles">
+                <GlowButton variant="outline">Explore ICONICA Scooters</GlowButton>
+              </Link>
             </div>
           </motion.div>
         </div>

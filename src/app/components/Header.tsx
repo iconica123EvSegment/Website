@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router';
+import { Link, useLocation } from 'react-router-dom';
 import { motion } from 'motion/react';
 import { Menu, X } from 'lucide-react';
 import { GlowButton } from './GlowButton';
@@ -22,9 +22,10 @@ export function Header() {
     { name: 'Home', path: '/' },
     { name: 'Vehicles', path: '/vehicles' },
     { name: 'Technology', path: '/technology' },
-    { name: 'Battery Swap', path: '/charging' },
+    { name: 'Charging', path: '/charging' },
     { name: 'Dealers', path: '/dealers' },
     { name: 'Test Ride', path: '/test-ride' },
+    { name: 'Batteries', path: '/batteries' },
     { name: 'About', path: '/about' },
     { name: 'Contact', path: '/contact' }
   ];
@@ -71,9 +72,12 @@ export function Header() {
           </nav>
 
           {/* CTA Button */}
-          <div className="hidden lg:block">
+          <div className="hidden lg:flex gap-3">
             <Link to="/test-ride">
               <GlowButton variant="primary">Book Test Ride</GlowButton>
+            </Link>
+            <Link to="/batteries">
+              <GlowButton variant="primary">Batteries</GlowButton>
             </Link>
           </div>
 
@@ -112,6 +116,9 @@ export function Header() {
             ))}
             <Link to="/test-ride" onClick={() => setIsMobileMenuOpen(false)}>
               <GlowButton variant="primary" className="w-full">Book Test Ride</GlowButton>
+            </Link>
+            <Link to="/batteries" onClick={() => setIsMobileMenuOpen(false)}>
+              <GlowButton variant="primary" className="w-full">Batteries</GlowButton>
             </Link>
           </div>
         </motion.div>

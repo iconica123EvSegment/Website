@@ -1,4 +1,4 @@
-import { createBrowserRouter } from 'react-router';
+import { createBrowserRouter } from 'react-router-dom';
 import Root from './pages/Root';
 import Home from './pages/Home';
 import Vehicles from './pages/Vehicles';
@@ -6,6 +6,8 @@ import VehicleDetail from './pages/VehicleDetail';
 import Technology from './pages/Technology';
 import Charging from './pages/Charging';
 import TestRide from './pages/TestRide';
+import Batteries from './pages/Batteries';
+import BuyNow from './pages/BuyNow';
 import About from './pages/About';
 import Contact from './pages/Contact';
 import Dealers from './pages/Dealers';
@@ -39,6 +41,14 @@ export const router = createBrowserRouter([
       {
         path: 'test-ride',
         Component: TestRide
+      },
+      {
+        path: 'batteries',
+        Component: Batteries
+      },
+      {
+        path: 'buy-now',
+        Component: BuyNow
       },
       {
         path: 'dealers',

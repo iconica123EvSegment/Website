@@ -25,6 +25,7 @@ export interface Vehicle {
     colors?: string[];
     loadCapacity?: string;
   };
+  specs?: string;
 }
 
 const heroScooter1 = 'https://via.placeholder.com/400x300?text=Hero+Scooter+1';

@@ -1,13 +1,13 @@
 import { motion } from 'motion/react';
-import { Link } from 'react-router';
+import { Link } from 'react-router-dom';
 import { vehicles } from '../data/vehicles';
 import { ArrowRight, Zap, Battery, Gauge } from 'lucide-react';
 import { useState } from 'react';
-import BuyNowForm from '../components/BuyNowForm';
+import { useNavigate } from 'react-router-dom';
 
 export default function Vehicles() {
   const [selectedCategory, setSelectedCategory] = useState<'all' | 'Low Speed' | 'High Speed'>('all');
-  const [buyNowOpen, setBuyNowOpen] = useState<{ open: boolean; vehicleName?: string }>({ open: false });
+  const navigate = useNavigate();
 
   const lowSpeedVehicles = vehicles.filter(v => v.category === 'Low Speed');
   const highSpeedVehicles = vehicles.filter(v => v.category === 'High Speed');
@@ -149,7 +149,25 @@ export default function Vehicles() {
                           <div className="flex items-center justify-between">
                             <button
                               className="px-4 py-2 bg-gradient-to-r from-[#00ff88] to-[#00d4aa] text-[#0a0b0f] rounded-lg font-semibold hover:shadow-[0_0_20px_rgba(0,255,136,0.3)] transition-all duration-300 text-sm sm:text-base"
-                              onClick={e => { e.preventDefault(); setBuyNowOpen({ open: true, vehicleName: vehicle.name }); }}
+                              onClick={e => {
+                                e.preventDefault();
+                                navigate('/buy-now', {
+                                  state: {
+                                    id: vehicle.id,
+                                    name: vehicle.name,
+                                    type: 'vehicle',
+                                    image: vehicle.image,
+                                    price: vehicle.price,
+                                    specs: vehicle.specs,
+                                    model: vehicle.model,
+                                    tagline: vehicle.tagline,
+                                    range: vehicle.range,
+                                    topSpeed: vehicle.topSpeed,
+                                    voltage: vehicle.voltage,
+                                    motor: vehicle.motor
+                                  }
+                                });
+                              }}
                             >
                               Buy Now
                             </button>
@@ -259,10 +277,6 @@ export default function Vehicles() {
         </div>
       </section>
 
-      {/* Floating Buy Now Form */}
-      {buyNowOpen.open && (
-        <BuyNowForm vehicleName={buyNowOpen.vehicleName} onClose={() => setBuyNowOpen({ open: false })} />
-      )}
 
       {/* CTA Section */}
       <section className="py-16 md:py-24 bg-gradient-to-br from-[#0a0b0f] via-[#00ff88]/5 to-[#0a0b0f]">
