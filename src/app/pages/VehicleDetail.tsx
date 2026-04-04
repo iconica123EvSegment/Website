@@ -1,29 +1,27 @@
 import { motion } from 'motion/react';
-import { Link, useParams } from 'react-router';
-import { getVehicleById } from '../data/vehicles';
-import { GlowButton } from '../components/GlowButton';
-import BuyNowForm from '../components/BuyNowForm';
-import { 
-  Battery, 
-  Zap, 
-  Gauge, 
-  Timer, 
-  Shield, 
-  Smartphone,
+import { Link, useParams, useNavigate } from 'react-router-dom';
+import {
+  Battery,
+  Gauge,
+  Zap,
+  Timer,
+  Shield,
+  Disc,
+  Settings,
+  Weight,
   ArrowLeft,
   CheckCircle2,
-  Ruler,
-  Weight,
-  Disc,
-  Settings
+  Smartphone
 } from 'lucide-react';
+import { getVehicleById } from '../data/vehicles';
+import { GlowButton } from '../components/GlowButton';
 import { useState } from 'react';
 
 export default function VehicleDetail() {
   const { id } = useParams<{ id: string }>();
   const vehicle = id ? getVehicleById(id) : undefined;
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
-  const [buyNowOpen, setBuyNowOpen] = useState(false);
+  const navigate = useNavigate();
 
   if (!vehicle) {
     return (
@@ -125,14 +123,28 @@ export default function VehicleDetail() {
               <div className="mb-6 md:mb-8 flex flex-col gap-2">
                 <button
                   className="px-6 py-3 bg-gradient-to-r from-[#00ff88] to-[#00d4aa] text-[#0a0b0f] rounded-lg font-semibold hover:shadow-[0_0_20px_rgba(0,255,136,0.3)] transition-all duration-300 text-lg"
-                  onClick={() => setBuyNowOpen(true)}
+                  onClick={() => {
+                    navigate('/buy-now', {
+                      state: {
+                        id: vehicle.id,
+                        name: vehicle.name,
+                        type: 'vehicle',
+                        image: vehicle.images[0],
+                        price: vehicle.price,
+                        specs: vehicle.specs,
+                        model: vehicle.model,
+                        tagline: vehicle.tagline,
+                        range: vehicle.range,
+                        topSpeed: vehicle.topSpeed,
+                        voltage: vehicle.voltage,
+                        motor: vehicle.motor
+                      }
+                    });
+                  }}
                 >
                   Buy Now
                 </button>
               </div>
-              {buyNowOpen && (
-                <BuyNowForm vehicleName={vehicle.name} onClose={() => setBuyNowOpen(false)} />
-              )}
 
               {/* Color Options */}
               {vehicle.detailedSpecs?.colors && vehicle.detailedSpecs.colors.length > 0 && (

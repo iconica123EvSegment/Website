@@ -1,4 +1,4 @@
-import { Link } from 'react-router';
+import { Link } from 'react-router-dom';
 import { Facebook, Twitter, Instagram, Linkedin, Mail, Phone, MapPin } from 'lucide-react';
 import iconicaLogoSrc from '../../assets/00ae5a5bf96ad0a467a78b5cb2dac25336ad0c63.png';
 const iconicaLogo = typeof iconicaLogoSrc === 'string' ? iconicaLogoSrc : iconicaLogoSrc.default;

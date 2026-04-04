@@ -1,5 +1,5 @@
 import { motion } from 'motion/react';
-import { Link } from 'react-router';
+import { Link } from 'react-router-dom';
 import { GlowButton } from '../components/GlowButton';
 import { vehicles } from '../data/vehicles';
 import { 
@@ -17,10 +17,20 @@ import heroScooter1 from '../../assets/703c3ea87de11d404d32fe65ec1b6f945ee11d45.
 import heroScooter2 from '../../assets/2e21e76cea61835ee54bfc253a56436d58d437b3.png';
 import batteryCompare from '../../assets/battery_compare.png';
 import { useState, useEffect } from 'react';
+import { FounderModal } from '../components/FounderModal';
 
 export default function Home() {
   const [currentImage, setCurrentImage] = useState(0);
   const heroImages = [heroScooter1, heroScooter2];
+
+  // Founder Modal logic
+  const [showFounderModal, setShowFounderModal] = useState(false);
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowFounderModal(true);
+    }, 1000);
+    return () => clearTimeout(timer);
+  }, []);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -98,6 +108,10 @@ export default function Home() {
 
   return (
     <div className="overflow-hidden">
+      {/* Founder Modal */}
+      {showFounderModal && (
+        <FounderModal onClose={() => setShowFounderModal(false)} />
+      )}
       {/* Hero Section - Full Screen */}
       <section className="relative h-screen flex items-center justify-center bg-gradient-to-b from-[#0a0b0f] via-[#0a0b0f] to-[#050507]">
         {/* Background Image with Overlay */}
@@ -126,12 +140,22 @@ export default function Home() {
             transition={{ duration: 0.8 }}
           >
             <motion.h1 
-              className="text-6xl md:text-8xl lg:text-9xl font-bold mb-8 bg-gradient-to-r from-[#00ff88] via-[#00d4aa] to-[#00e5ff] bg-clip-text text-transparent"
+              className="text-6xl md:text-8xl lg:text-9xl font-bold mb-8 bg-gradient-to-r from-[#00ff88] via-[#00d4aa] to-[#00e5ff] bg-clip-text text-transparent flex flex-row items-center justify-center gap-1"
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, delay: 0.2 }}
             >
-              ICONICA
+              <span className="leading-none">ICONICA</span>
+              <img 
+                src="/trademark.png" 
+                alt="Trademark" 
+                className="inline-block w-10 h-10 md:w-[3.5rem] md:h-[3.5rem] lg:w-[5.5rem] lg:h-[5.5rem] align-middle"
+                style={{ 
+                  marginLeft: '0.1em', 
+                  filter: 'drop-shadow(0 0 12px #00ff88) drop-shadow(0 0 8px #00e5ff) brightness(1.5) contrast(2)',
+                  fontWeight: 900
+                }}
+              />
             </motion.h1>
             <motion.h2 
               className="text-3xl md:text-5xl lg:text-6xl font-bold mb-6 text-white"
