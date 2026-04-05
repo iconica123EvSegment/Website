@@ -1,6 +1,6 @@
 import { motion } from 'motion/react';
 import { Target, Eye, Award, Users, Leaf, Zap, Quote } from 'lucide-react';
-import founderImageSrc from '../../assets/6406f25d7354864a57ca2d9d9b9cad9e0c04e7ac.png';
+import founderImageSrc from '../../assets/ceo.jpeg';
 const founderImage = typeof founderImageSrc === 'string' ? founderImageSrc : founderImageSrc.default;
 
 export default function About() {

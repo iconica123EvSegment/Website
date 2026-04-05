@@ -13,6 +13,8 @@ import Contact from './pages/Contact';
 import Dealers from './pages/Dealers';
 import NotFound from './pages/NotFound';
 
+import Careers from './pages/Careers';
+
 export const router = createBrowserRouter([
   {
     path: '/',
@@ -57,6 +59,10 @@ export const router = createBrowserRouter([
       {
         path: 'about',
         Component: About
+      },
+      {
+        path: 'careers',
+        Component: Careers
       },
       {
         path: 'contact',

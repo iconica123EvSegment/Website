@@ -141,18 +141,18 @@ export default function Home() {
             transition={{ duration: 0.8 }}
           >
             <motion.h1 
-              className="text-6xl md:text-8xl lg:text-9xl font-bold mb-8 bg-gradient-to-r from-[#00ff88] via-[#00d4aa] to-[#00e5ff] bg-clip-text text-transparent flex flex-row items-center justify-center gap-1"
+              className="text-6xl md:text-8xl lg:text-9xl font-bold mb-8 bg-gradient-to-r from-[#00ff88] via-[#00d4aa] to-[#00e5ff] bg-clip-text text-transparent flex flex-col items-center justify-center gap-2"
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, delay: 0.2 }}
             >
-              <span className="leading-none">ICONICA</span>
               <img 
                 src={iconicaLogo}
                 alt="ICONICA Logo" 
-                className="inline-block w-12 h-12 md:w-[4rem] md:h-[4rem] lg:w-[6rem] lg:h-[6rem] align-middle"
-                style={{ marginLeft: '0.2em' }}
+                className="w-20 h-20 md:w-32 md:h-32 lg:w-40 lg:h-40 mb-0.5 drop-shadow-[0_4px_24px_rgba(0,255,136,0.5)]"
+                style={{ objectFit: 'contain' }}
               />
+              <span className="leading-none">ICONICA</span>
             </motion.h1>
             <motion.h2 
               className="text-3xl md:text-5xl lg:text-6xl font-bold mb-6 text-white"

@@ -257,7 +257,25 @@ export default function Vehicles() {
                           <div className="flex items-center justify-between">
                             <button
                               className="px-4 py-2 bg-gradient-to-r from-[#00e5ff] to-[#00ff88] text-[#0a0b0f] rounded-lg font-semibold hover:shadow-[0_0_20px_rgba(0,229,255,0.3)] transition-all duration-300 text-sm sm:text-base"
-                              onClick={e => { e.preventDefault(); setBuyNowOpen({ open: true, vehicleName: vehicle.name }); }}
+                              onClick={e => {
+                                e.preventDefault();
+                                navigate('/buy-now', {
+                                  state: {
+                                    id: vehicle.id,
+                                    name: vehicle.name,
+                                    type: 'vehicle',
+                                    image: vehicle.image,
+                                    price: vehicle.price,
+                                    specs: vehicle.specs,
+                                    model: vehicle.model,
+                                    tagline: vehicle.tagline,
+                                    range: vehicle.range,
+                                    topSpeed: vehicle.topSpeed,
+                                    voltage: vehicle.voltage,
+                                    motor: vehicle.motor
+                                  }
+                                });
+                              }}
                             >
                               Buy Now
                             </button>

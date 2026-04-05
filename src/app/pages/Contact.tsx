@@ -1,7 +1,7 @@
 import { motion } from 'motion/react';
 import { useState } from 'react';
 import { GlowButton } from '../components/GlowButton';
-import { Mail, Phone, MapPin, Clock, Send } from 'lucide-react';
+import { Mail, Phone, MapPin, Clock, Send, Facebook, Twitter, Instagram, Linkedin } from 'lucide-react';
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -280,16 +280,36 @@ export default function Contact() {
                   Connect with us on social media for the latest updates and news.
                 </p>
                 <div className="flex space-x-4">
-                  {['Facebook', 'Twitter', 'Instagram', 'LinkedIn'].map((platform) => (
-                    <a
-                      key={platform}
-                      href="#"
-                      className="w-10 h-10 bg-white/5 hover:bg-[#00ff88]/20 border border-white/10 hover:border-[#00ff88]/50 rounded-lg flex items-center justify-center transition-all duration-300"
-                    >
-                      <span className="sr-only">{platform}</span>
-                      <div className="w-5 h-5 bg-white/60 rounded"></div>
-                    </a>
-                  ))}
+                  <a
+                    href="#"
+                    className="w-10 h-10 bg-white/5 hover:bg-[#00ff88]/20 border border-white/10 hover:border-[#00ff88]/50 rounded-lg flex items-center justify-center transition-all duration-300"
+                    aria-label="Facebook"
+                  >
+                    <Facebook className="w-5 h-5 text-white/60" />
+                  </a>
+                  <a
+                    href="#"
+                    className="w-10 h-10 bg-white/5 hover:bg-[#00ff88]/20 border border-white/10 hover:border-[#00ff88]/50 rounded-lg flex items-center justify-center transition-all duration-300"
+                    aria-label="Twitter"
+                  >
+                    <Twitter className="w-5 h-5 text-white/60" />
+                  </a>
+                  <a
+                    href="https://www.instagram.com/iconicaglobex?igsh=MWRpejd2a3U2YzZidA%3D%3D&utm_source=qr"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-10 h-10 bg-white/5 hover:bg-[#00ff88]/20 border border-white/10 hover:border-[#00ff88]/50 rounded-lg flex items-center justify-center transition-all duration-300"
+                    aria-label="Instagram"
+                  >
+                    <Instagram className="w-5 h-5 text-white/60" />
+                  </a>
+                  <a
+                    href="#"
+                    className="w-10 h-10 bg-white/5 hover:bg-[#00ff88]/20 border border-white/10 hover:border-[#00ff88]/50 rounded-lg flex items-center justify-center transition-all duration-300"
+                    aria-label="LinkedIn"
+                  >
+                    <Linkedin className="w-5 h-5 text-white/60" />
+                  </a>
                 </div>
               </div>
 
@@ -298,6 +318,12 @@ export default function Contact() {
                 <p className="text-white/70 mb-4">
                   Interested in joining the ICONICA team? We're always looking for talented individuals.
                 </p>
+                <a
+                  href="/careers"
+                  className="inline-block px-6 py-2 bg-gradient-to-r from-[#00e5ff] to-[#00ff88] text-[#0a0b0f] rounded-lg font-semibold hover:shadow-[0_0_20px_rgba(0,229,255,0.3)] transition-all duration-300"
+                >
+                  View Open Positions & Apply
+                </a>
                 <button className="text-[#00e5ff] hover:text-[#00d4aa] transition-colors font-medium">
                   View Open Positions →
                 </button>

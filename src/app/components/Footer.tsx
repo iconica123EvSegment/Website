@@ -71,7 +71,7 @@ export function Footer() {
               <a href="#" className="text-white/60 hover:text-[#00ff88] transition-colors">
                 <Twitter size={20} />
               </a>
-              <a href="#" className="text-white/60 hover:text-[#00ff88] transition-colors">
+              <a href="https://www.instagram.com/iconicaglobex?igsh=MWRpejd2a3U2YzZidA%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer" className="text-white/60 hover:text-[#00ff88] transition-colors">
                 <Instagram size={20} />
               </a>
               <a href="#" className="text-white/60 hover:text-[#00ff88] transition-colors">
@@ -117,6 +117,11 @@ export function Footer() {
               <li>
                 <Link to="/contact" className="text-white/60 hover:text-[#00ff88] transition-colors text-sm">
                   Contact
+                </Link>
+              </li>
+              <li>
+                <Link to="/careers" className="text-white/60 hover:text-[#00ff88] transition-colors text-sm">
+                  Careers
                 </Link>
               </li>
             </ul>

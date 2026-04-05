@@ -44,7 +44,7 @@ export function FounderModal({ onClose }: FounderModalProps) {
               onClick={handleClose}
               className="absolute top-3 right-3 z-10 p-1.5 bg-white/10 hover:bg-white/20 rounded-full transition-all duration-200"
             >
-              <X className="w-5 h-5 text-white" />
+              <X className="w-6 h-5 text-white" />
             </button>
 
             {/* Content */}
@@ -59,9 +59,9 @@ export function FounderModal({ onClose }: FounderModalProps) {
                 >
                   <div className="relative">
                     <div className="absolute inset-0 bg-gradient-to-br from-[#00ff88] to-[#00e5ff] rounded-full blur-lg opacity-50"></div>
-                    <div className="relative w-28 h-28 rounded-full overflow-hidden border-2 border-[#00ff88]/50">
+                    <div className="relative w-32 h-32 rounded-full overflow-hidden border-2 border-[#00ff88]/50">
                       <img
-                        src="/ceo.png"
+                        src="/ceot.jpeg"
                         alt="Founder"
                         className="w-full h-full object-cover"
                       />
@@ -77,13 +77,17 @@ export function FounderModal({ onClose }: FounderModalProps) {
                   className="flex-1 pt-1"
                 >
                   <p className="text-sm text-white/90 mb-3 leading-relaxed italic">
-                    "At ICONICA, we're revolutionizing urban mobility. Our vision is to make sustainable transportation accessible and exciting for everyone."
+                    "We are building more than a company — we are shaping the future of mobility.
+                    Iconica stands for innovation on the road, while Anaisha powers it with trust.
+                    Every product we create reflects precision, performance, and purpose.
+                    Our vision is to drive India towards cleaner, smarter energy solutions.
+                    This is not just business — this is our commitment to the EV revolution."
                   </p>
 
                   {/* Founder Details */}
                   <div className="pt-2 border-t border-white/10">
                     <h3 className="text-sm font-bold text-white">Founder & CEO</h3>
-                    <p className="text-xs text-[#00ff88]">ICONICA Globex Pvt Ltd</p>
+                    <p className="text-xs text-[#00ff88]">ICONICA GLOBEX PVT. LTD.</p>
                   </div>
                 </motion.div>
               </div>
