@@ -16,7 +16,7 @@ import {
 import heroScooter1 from '../../assets/703c3ea87de11d404d32fe65ec1b6f945ee11d45.png';
 import heroScooter2 from '../../assets/2e21e76cea61835ee54bfc253a56436d58d437b3.png';
 import batteryCompare from '../../assets/battery.png';
-import iconicaLogo from '../../assets/iconica_logo.png';
+import iconicaLogo from '../../assets/logoa.png';
 import { useState, useEffect } from 'react';
 import { FounderModal } from '../components/FounderModal';
 
@@ -139,20 +139,25 @@ export default function Home() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
+            className="py-12 md:py-20 lg:py-28"
           >
             <motion.h1 
-              className="text-6xl md:text-8xl lg:text-9xl font-bold mb-8 bg-gradient-to-r from-[#00ff88] via-[#00d4aa] to-[#00e5ff] bg-clip-text text-transparent flex flex-col items-center justify-center gap-2"
+              className="text-6xl md:text-8xl lg:text-[11rem] font-bold mb-2 flex flex-col items-center justify-center gap-0 relative"
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, delay: 0.2 }}
             >
-              <img 
-                src={iconicaLogo}
-                alt="ICONICA Logo" 
-                className="w-20 h-20 md:w-32 md:h-32 lg:w-40 lg:h-40 mb-0.5 drop-shadow-[0_4px_24px_rgba(0,255,136,0.5)]"
-                style={{ objectFit: 'contain' }}
-              />
-              <span className="leading-none">ICONICA</span>
+              <div className="relative flex flex-col items-center justify-center w-full">
+                {/* Greenish flash/glow only behind logo, more transparent */}
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 z-0 w-40 h-40 md:w-60 md:h-60 lg:w-80 lg:h-80 rounded-full bg-green-400 blur-2xl opacity-40 animate-pulse pointer-events-none"></div>
+                <img 
+                  src={iconicaLogo}
+                  alt="ICONICA Logo" 
+                  className="relative z-10 w-32 h-32 md:w-48 md:h-48 lg:w-64 lg:h-64 mb-0 drop-shadow-[0_4px_32px_rgba(0,255,136,0.7)]"
+                  style={{ objectFit: 'contain' }}
+                />
+                <span className="relative z-10 leading-none mt-0 text-[4rem] md:text-[6.5rem] lg:text-[9rem] font-extrabold bg-gradient-to-r from-[#00ff88] via-[#00d4aa] to-[#00e5ff] bg-clip-text text-transparent drop-shadow-[0_4px_32px_rgba(0,255,136,0.7)]" style={{letterSpacing:'0.03em'}}>ICONICA</span>
+              </div>
             </motion.h1>
             <motion.h2 
               className="text-3xl md:text-5xl lg:text-6xl font-bold mb-6 text-white"
