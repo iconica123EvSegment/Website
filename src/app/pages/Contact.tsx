@@ -307,20 +307,35 @@ export default function Contact() {
         </div>
       </section>
 
-      {/* Map Placeholder */}
+      {/* Map Section with Real Address and Google Map */}
       <section className="py-24 bg-gradient-to-b from-transparent to-[#0a0b0f]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="relative h-96 bg-gradient-to-br from-white/5 to-white/0 backdrop-blur-sm border border-white/10 rounded-2xl overflow-hidden"
+            className="relative bg-gradient-to-br from-white/5 to-white/0 backdrop-blur-sm border border-white/10 rounded-2xl overflow-hidden flex flex-col items-center justify-center"
+            style={{ minHeight: '32rem' }}
           >
-            <div className="absolute inset-0 flex items-center justify-center">
-              <div className="text-center">
-                <MapPin className="w-16 h-16 mx-auto mb-4 text-[#00ff88]" />
-                <h3 className="text-2xl font-bold text-white mb-2">Visit Our Headquarters</h3>
-                <p className="text-white/60">123 Electric Avenue, Tech City, TC 12345</p>
+            <div className="w-full flex flex-col items-center justify-center py-8">
+              <MapPin className="w-16 h-16 mx-auto mb-4 text-[#00ff88]" />
+              <h3 className="text-2xl font-bold text-white mb-2">Visit Our Headquarters</h3>
+              <p className="text-white/60 text-lg font-medium mb-6 text-center">
+                Plot No. AM 7, Sompura Industrial Area,<br />
+                Nidavanda Village, Nelamangala Taluk,<br />
+                Bangalore - 562 111
+              </p>
+              <div className="w-full flex justify-center">
+                <iframe
+                  title="Google Map - ICONICA HQ"
+                  src="https://www.google.com/maps?q=Plot+No.+AM+7,+Sompura+Industrial+Area,+Nidavanda+Village,+Nelamangala+Taluk,+Bangalore+-+562+111&output=embed"
+                  width="100%"
+                  height="350"
+                  style={{ border: 0, borderRadius: '1rem', maxWidth: '700px' }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                ></iframe>
               </div>
             </div>
           </motion.div>

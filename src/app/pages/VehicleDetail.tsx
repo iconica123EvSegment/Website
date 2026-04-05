@@ -146,22 +146,6 @@ export default function VehicleDetail() {
                 </button>
               </div>
 
-              {/* Color Options */}
-              {vehicle.detailedSpecs?.colors && vehicle.detailedSpecs.colors.length > 0 && (
-                <div className="mb-6 md:mb-8">
-                  <p className="text-white/60 text-xs sm:text-sm mb-3">Available Colors</p>
-                  <div className="flex flex-wrap gap-2">
-                    {vehicle.detailedSpecs.colors.map((color, index) => (
-                      <span 
-                        key={index}
-                        className="px-3 sm:px-4 py-1.5 sm:py-2 bg-white/5 border border-white/10 rounded-full text-xs sm:text-sm text-white/80"
-                      >
-                        {color}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              )}
 
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
                 <Link to="/test-ride" className="flex-1">
@@ -277,7 +261,7 @@ export default function VehicleDetail() {
         </div>
       </section>
 
-      {/* Battery & Range */}
+      {/* Battery & Charging Technology */}
       <section className="py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
@@ -288,25 +272,40 @@ export default function VehicleDetail() {
               className="p-8 bg-gradient-to-br from-[#00ff88]/10 to-transparent border border-[#00ff88]/30 rounded-2xl"
             >
               <Battery className="w-12 h-12 mb-6 text-[#00ff88]" />
-              <h3 className="text-3xl font-bold mb-4 text-white">Battery Technology</h3>
+              <h3 className="text-3xl font-bold mb-4 text-white">Battery & Charging Technology</h3>
               <p className="text-white/70 mb-6">
-                Advanced {vehicle.battery} lithium-ion battery pack with intelligent battery management system. 
-                Optimized for longevity and performance with over 1000+ charge cycles.
+                Advanced 60V Lithium-ion (LiFePO₄) battery system engineered for high efficiency, safety, and long-term performance. Designed with an intelligent Battery Management System (BMS) to ensure stable power delivery, fast charging, and extended battery life across all riding conditions.
               </p>
-              <ul className="space-y-3">
-                <li className="flex items-center space-x-3">
-                  <CheckCircle2 className="text-[#00ff88]" size={20} />
-                  <span className="text-white/80">Smart Battery Management</span>
-                </li>
-                <li className="flex items-center space-x-3">
-                  <CheckCircle2 className="text-[#00ff88]" size={20} />
-                  <span className="text-white/80">Temperature Control</span>
-                </li>
-                <li className="flex items-center space-x-3">
-                  <CheckCircle2 className="text-[#00ff88]" size={20} />
-                  <span className="text-white/80">Removable Design</span>
-                </li>
-              </ul>
+              <div className="mb-4">
+                <span className="block text-lg font-semibold text-[#00ff88] mb-2">Key Highlights</span>
+                <ul className="space-y-3">
+                  <li className="flex items-center space-x-3">
+                    <CheckCircle2 className="text-[#00ff88]" size={20} />
+                    <span className="text-white/80 font-medium">Smart BMS Protection</span>
+                    <span className="text-white/60 text-sm">Protects against overcharge, over-discharge, overheating, and short circuits</span>
+                  </li>
+                  <li className="flex items-center space-x-3">
+                    <CheckCircle2 className="text-[#00ff88]" size={20} />
+                    <span className="text-white/80 font-medium">Fast Charging Efficiency</span>
+                    <span className="text-white/60 text-sm">Optimized charging system with 4–5 hours full charge time</span>
+                  </li>
+                  <li className="flex items-center space-x-3">
+                    <CheckCircle2 className="text-[#00ff88]" size={20} />
+                    <span className="text-white/80 font-medium">High Cycle Life</span>
+                    <span className="text-white/60 text-sm">Durable performance with 1000+ charge cycles for long-term use</span>
+                  </li>
+                  <li className="flex items-center space-x-3">
+                    <CheckCircle2 className="text-[#00ff88]" size={20} />
+                    <span className="text-white/80 font-medium">Thermal Stability</span>
+                    <span className="text-white/60 text-sm">Advanced temperature control for consistent performance in all conditions</span>
+                  </li>
+                  <li className="flex items-center space-x-3">
+                    <CheckCircle2 className="text-[#00ff88]" size={20} />
+                    <span className="text-white/80 font-medium">Swappable & Removable Design</span>
+                    <span className="text-white/60 text-sm">Easy battery replacement for convenience and flexibility</span>
+                  </li>
+                </ul>
+              </div>
             </motion.div>
 
             <motion.div
@@ -340,60 +339,7 @@ export default function VehicleDetail() {
         </div>
       </section>
 
-      {/* Charging */}
-      <section className="py-24 bg-gradient-to-b from-transparent to-[#050507]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-            >
-              <h2 className="text-4xl font-bold mb-6 text-white">Fast & Convenient Charging</h2>
-              <p className="text-xl text-white/60 mb-8">
-                Fully charge in just {vehicle.chargingTime} hours with a standard home outlet. 
-                Compatible with all ICONICA fast charging stations for even quicker top-ups.
-              </p>
-              
-              <div className="space-y-4">
-                <div className="flex items-start space-x-4 p-4 bg-white/5 rounded-xl">
-                  <Timer className="text-[#00ff88] mt-1" size={24} />
-                  <div>
-                    <h3 className="font-semibold text-white mb-1">Home Charging</h3>
-                    <p className="text-white/60 text-sm">Plug into any standard outlet</p>
-                  </div>
-                </div>
-                <div className="flex items-start space-x-4 p-4 bg-white/5 rounded-xl">
-                  <Zap className="text-[#00d4aa] mt-1" size={24} />
-                  <div>
-                    <h3 className="font-semibold text-white mb-1">Fast Charging</h3>
-                    <p className="text-white/60 text-sm">80% charge in under 2 hours</p>
-                  </div>
-                </div>
-                <div className="flex items-start space-x-4 p-4 bg-white/5 rounded-xl">
-                  <Smartphone className="text-[#00e5ff] mt-1" size={24} />
-                  <div>
-                    <h3 className="font-semibold text-white mb-1">Smart Monitoring</h3>
-                    <p className="text-white/60 text-sm">Track charging via mobile app</p>
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-            >
-              <img 
-                src="https://images.unsplash.com/photo-1672542128826-5f0d578713d2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxlbGVjdHJpYyUyMHZlaGljbGUlMjBjaGFyZ2luZyUyMHN0YXRpb258ZW58MXx8fHwxNzczNDE3MjUyfDA&ixlib=rb-4.1.0&q=80&w=1080" 
-                alt="Charging"
-                className="rounded-2xl shadow-2xl"
-              />
-            </motion.div>
-          </div>
-        </div>
-      </section>
+      
 
       {/* CTA Section */}
       <section className="py-24">

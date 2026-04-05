@@ -38,6 +38,7 @@ export default function BuyNow() {
     state: '',
     pincode: '',
     paymentMethod: 'full',
+    preferredDate: '',
     message: ''
   });
 
@@ -386,10 +387,11 @@ export default function BuyNow() {
                 </div>
               </div>
 
+
               {/* Payment Method */}
               <div>
-                <label className="block text-sm font-medium text-white/80 mb-2">
-                  <CreditCard className="w-4 h-4 inline mr-2" />
+                <label className="block text-sm font-medium text-[#00ff88] mb-2">
+                  <CreditCard className="w-4 h-4 inline mr-2 text-[#00ff88]" />
                   Payment Method *
                 </label>
                 <select
@@ -397,13 +399,29 @@ export default function BuyNow() {
                   value={formData.paymentMethod}
                   onChange={handleInputChange}
                   required
-                  className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-white focus:border-[#00ff88]/50 focus:outline-none transition-colors"
+                  className="w-full px-4 py-3 bg-black border border-[#00ff88]/30 rounded-lg text-[#00ff88] focus:border-[#00ff88] focus:outline-none transition-colors"
+                  style={{ backgroundColor: '#0a0b0f' }}
                 >
-                  <option value="full">Full Payment</option>
-                  <option value="emi">EMI Option</option>
-                  <option value="financing">Bank Financing</option>
-                  <option value="lease">Lease</option>
+                  <option value="full" className="bg-black text-[#00ff88]">Full Payment</option>
+                  <option value="emi" className="bg-black text-[#00ff88]">EMI Option</option>
+                  <option value="financing" className="bg-black text-[#00ff88]">Bank Financing</option>
+                  <option value="lease" className="bg-black text-[#00ff88]">Lease</option>
                 </select>
+              </div>
+
+              {/* Preferred Date */}
+              <div>
+                <label className="block text-sm font-medium text-[#00ff88] mb-2">
+                  Preferred Date
+                </label>
+                <input
+                  type="date"
+                  name="preferredDate"
+                  value={formData.preferredDate}
+                  onChange={handleInputChange}
+                  className="w-full px-4 py-3 bg-black border border-[#00ff88]/30 rounded-lg text-[#00ff88] focus:border-[#00ff88] focus:outline-none transition-colors"
+                  style={{ backgroundColor: '#0a0b0f' }}
+                />
               </div>
 
               {/* Additional Message */}

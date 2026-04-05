@@ -15,7 +15,8 @@ import {
 } from 'lucide-react';
 import heroScooter1 from '../../assets/703c3ea87de11d404d32fe65ec1b6f945ee11d45.png';
 import heroScooter2 from '../../assets/2e21e76cea61835ee54bfc253a56436d58d437b3.png';
-import batteryCompare from '../../assets/battery_compare.png';
+import batteryCompare from '../../assets/battery.png';
+import iconicaLogo from '../../assets/iconica_logo.png';
 import { useState, useEffect } from 'react';
 import { FounderModal } from '../components/FounderModal';
 
@@ -147,14 +148,10 @@ export default function Home() {
             >
               <span className="leading-none">ICONICA</span>
               <img 
-                src="/trademark.png" 
-                alt="Trademark" 
-                className="inline-block w-10 h-10 md:w-[3.5rem] md:h-[3.5rem] lg:w-[5.5rem] lg:h-[5.5rem] align-middle"
-                style={{ 
-                  marginLeft: '0.1em', 
-                  filter: 'drop-shadow(0 0 12px #00ff88) drop-shadow(0 0 8px #00e5ff) brightness(1.5) contrast(2)',
-                  fontWeight: 900
-                }}
+                src={iconicaLogo}
+                alt="ICONICA Logo" 
+                className="inline-block w-12 h-12 md:w-[4rem] md:h-[4rem] lg:w-[6rem] lg:h-[6rem] align-middle"
+                style={{ marginLeft: '0.2em' }}
               />
             </motion.h1>
             <motion.h2 
@@ -431,7 +428,7 @@ export default function Home() {
               className="text-center p-8 bg-gradient-to-br from-white/5 to-white/0 backdrop-blur-sm border border-white/10 rounded-2xl"
             >
               <Award className="w-12 h-12 mx-auto mb-4 text-[#00d4aa]" />
-              <h3 className="text-3xl font-bold mb-2 text-white">₹1/km</h3>
+              <h3 className="text-3xl font-bold mb-2 text-white">₹0.9/km</h3>
               <p className="text-white/60">Average Cost Per Kilometer</p>
             </motion.div>
 

@@ -112,109 +112,8 @@ export default function Dealers() {
         </div>
       </section>
 
-      {/* Why Partner Section */}
-      <section className="py-24 bg-gradient-to-b from-transparent to-[#050507]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-white">Why Partner with ICONICA?</h2>
-            <p className="text-xl text-white/60">Unlock unlimited growth potential in the EV industry</p>
-          </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {benefits.map((benefit, index) => {
-              const Icon = benefit.icon;
-              return (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.1 }}
-                  className="p-8 bg-gradient-to-br from-white/5 to-white/0 backdrop-blur-sm border border-white/10 rounded-2xl hover:border-[#00ff88]/30 transition-all duration-300"
-                >
-                  <Icon className="w-12 h-12 mb-6" style={{ color: benefit.color }} />
-                  <h3 className="text-xl font-bold mb-3 text-white">{benefit.title}</h3>
-                  <p className="text-white/60">{benefit.description}</p>
-                </motion.div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      {/* Requirements Section */}
-      <section className="py-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-            >
-              <h2 className="text-4xl font-bold mb-6 text-white">Dealership Requirements</h2>
-              <p className="text-xl text-white/60 mb-8">
-                We're looking for passionate partners who share our vision for sustainable mobility.
-              </p>
-              
-              <div className="space-y-4">
-                {requirements.map((req, index) => (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, x: -20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: index * 0.1 }}
-                    className="flex items-start space-x-4 p-4 bg-white/5 rounded-xl"
-                  >
-                    <div className="w-2 h-2 mt-2 bg-[#00ff88] rounded-full flex-shrink-0"></div>
-                    <p className="text-white/80">{req}</p>
-                  </motion.div>
-                ))}
-              </div>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              className="p-8 bg-gradient-to-br from-[#00ff88]/10 to-transparent border border-[#00ff88]/30 rounded-2xl"
-            >
-              <Building2 className="w-12 h-12 mb-6 text-[#00ff88]" />
-              <h3 className="text-3xl font-bold mb-4 text-white">Investment Details</h3>
-              
-              <div className="space-y-6">
-                <div>
-                  <p className="text-white/40 text-sm mb-2">Initial Investment</p>
-                  <p className="text-2xl font-bold text-white">₹15 - 25 Lakhs</p>
-                </div>
-                
-                <div>
-                  <p className="text-white/40 text-sm mb-2">Showroom Space</p>
-                  <p className="text-2xl font-bold text-white">300 - 500 sq ft</p>
-                </div>
-                
-                <div>
-                  <p className="text-white/40 text-sm mb-2">Expected ROI</p>
-                  <p className="text-2xl font-bold text-white">18 - 24 months</p>
-                </div>
-
-                <div className="pt-6 border-t border-white/10">
-                  <p className="text-white/60 text-sm">
-                    Includes: Inventory, Display Units, Signage, Training, Marketing Materials
-                  </p>
-                </div>
-              </div>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* Application Form */}
+            {/* Application Form */}
       <section className="py-24 bg-gradient-to-b from-transparent to-[#0a0b0f]">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -395,6 +294,110 @@ export default function Dealers() {
         </div>
       </section>
 
+      {/* Why Partner Section */}
+      <section className="py-24 bg-gradient-to-b from-transparent to-[#050507]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-white">Why Partner with ICONICA?</h2>
+            <p className="text-xl text-white/60">Unlock unlimited growth potential in the EV industry</p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {benefits.map((benefit, index) => {
+              const Icon = benefit.icon;
+              return (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.1 }}
+                  className="p-8 bg-gradient-to-br from-white/5 to-white/0 backdrop-blur-sm border border-white/10 rounded-2xl hover:border-[#00ff88]/30 transition-all duration-300"
+                >
+                  <Icon className="w-12 h-12 mb-6" style={{ color: benefit.color }} />
+                  <h3 className="text-xl font-bold mb-3 text-white">{benefit.title}</h3>
+                  <p className="text-white/60">{benefit.description}</p>
+                </motion.div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* Requirements Section */}
+      <section className="py-24">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+            >
+              <h2 className="text-4xl font-bold mb-6 text-white">Dealership Requirements</h2>
+              <p className="text-xl text-white/60 mb-8">
+                We're looking for passionate partners who share our vision for sustainable mobility.
+              </p>
+              
+              <div className="space-y-4">
+                {requirements.map((req, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: index * 0.1 }}
+                    className="flex items-start space-x-4 p-4 bg-white/5 rounded-xl"
+                  >
+                    <div className="w-2 h-2 mt-2 bg-[#00ff88] rounded-full flex-shrink-0"></div>
+                    <p className="text-white/80">{req}</p>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="p-8 bg-gradient-to-br from-[#00ff88]/10 to-transparent border border-[#00ff88]/30 rounded-2xl"
+            >
+              <Building2 className="w-12 h-12 mb-6 text-[#00ff88]" />
+              <h3 className="text-3xl font-bold mb-4 text-white">Investment Details</h3>
+              
+              <div className="space-y-6">
+                <div>
+                  <p className="text-white/40 text-sm mb-2">Initial Investment</p>
+                  <p className="text-2xl font-bold text-white">₹15 - 25 Lakhs</p>
+                </div>
+                
+                <div>
+                  <p className="text-white/40 text-sm mb-2">Showroom Space</p>
+                  <p className="text-2xl font-bold text-white">300 - 500 sq ft</p>
+                </div>
+                
+                <div>
+                  <p className="text-white/40 text-sm mb-2">Expected ROI</p>
+                  <p className="text-2xl font-bold text-white">18 - 24 months</p>
+                </div>
+
+                <div className="pt-6 border-t border-white/10">
+                  <p className="text-white/60 text-sm">
+                    Includes: Inventory, Display Units, Signage, Training, Marketing Materials
+                  </p>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      
+
       {/* Contact Section */}
       <section className="py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -407,7 +410,7 @@ export default function Dealers() {
             >
               <Phone className="w-10 h-10 mx-auto mb-4 text-[#00ff88]" />
               <h3 className="text-lg font-bold mb-2 text-white">Call Us</h3>
-              <p className="text-white/60">+91 (800) 123-4567</p>
+              <p className="text-white/60">+91 9310763390</p>
             </motion.div>
 
             <motion.div
@@ -419,7 +422,7 @@ export default function Dealers() {
             >
               <Mail className="w-10 h-10 mx-auto mb-4 text-[#00d4aa]" />
               <h3 className="text-lg font-bold mb-2 text-white">Email Us</h3>
-              <p className="text-white/60">dealers@iconica.com</p>
+              <p className="text-white/60">ceo@iconicaglobal.com</p>
             </motion.div>
 
             <motion.div

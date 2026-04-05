@@ -76,9 +76,6 @@ export function Header() {
             <Link to="/test-ride">
               <GlowButton variant="primary">Book Test Ride</GlowButton>
             </Link>
-            <Link to="/batteries">
-              <GlowButton variant="primary">Batteries</GlowButton>
-            </Link>
           </div>
 
           {/* Mobile Menu Button */}
@@ -116,9 +113,6 @@ export function Header() {
             ))}
             <Link to="/test-ride" onClick={() => setIsMobileMenuOpen(false)}>
               <GlowButton variant="primary" className="w-full">Book Test Ride</GlowButton>
-            </Link>
-            <Link to="/batteries" onClick={() => setIsMobileMenuOpen(false)}>
-              <GlowButton variant="primary" className="w-full">Batteries</GlowButton>
             </Link>
           </div>
         </motion.div>

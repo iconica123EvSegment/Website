@@ -101,7 +101,7 @@ export function Footer() {
               </li>
               <li>
                 <Link to="/charging" className="text-white/60 hover:text-[#00ff88] transition-colors text-sm">
-                  Battery Swap
+                  Charging
                 </Link>
               </li>
               <li>

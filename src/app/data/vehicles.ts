@@ -35,7 +35,7 @@ export const vehicles: Vehicle[] = [
   // LOW SPEED VEHICLES
   {
     id: 'zylo',
-    name: 'Iconic Zylo',
+    name: 'Iconica Zylo',
     model: 'ZYLO',
     category: 'Low Speed',
     tagline: 'Premium Urban Commuting',
@@ -63,7 +63,7 @@ export const vehicles: Vehicle[] = [
   },
   {
     id: 'vexo',
-    name: 'Iconic Vexo',
+    name: 'Iconica Vexo',
     model: 'VEXO',
     category: 'Low Speed',
     tagline: 'Graceful City Mobility',
@@ -91,7 +91,7 @@ export const vehicles: Vehicle[] = [
   },
   {
     id: 'navo',
-    name: 'Iconic Navo',
+    name: 'Iconica Navo',
     model: 'NAVO',
     category: 'Low Speed',
     tagline: 'Navigate Your Future',
@@ -119,7 +119,7 @@ export const vehicles: Vehicle[] = [
   },
   {
     id: 'vira',
-    name: 'Iconic Vira',
+    name: 'Iconica Vira',
     model: 'VIRA',
     category: 'Low Speed',
     tagline: 'Reliable Energy',
@@ -147,7 +147,7 @@ export const vehicles: Vehicle[] = [
   },
   {
     id: 'zeno',
-    name: 'Iconic Zeno',
+    name: 'Iconica Zeno',
     model: 'ZENO',
     category: 'Low Speed',
     tagline: 'Smooth Gliding Experience',
