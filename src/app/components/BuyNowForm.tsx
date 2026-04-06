@@ -13,17 +13,29 @@ const BuyNowForm: React.FC<BuyNowFormProps> = ({ vehicleName, onClose }) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Store the form data and vehicleName (model) in localStorage or send to backend here
     const buyRequest = {
       ...form,
       model: vehicleName || '',
       timestamp: new Date().toISOString(),
     };
-    // Example: store in localStorage (can be replaced with API call)
-    const prev = JSON.parse(localStorage.getItem('buyNowRequests') || '[]');
-    localStorage.setItem('buyNowRequests', JSON.stringify([...prev, buyRequest]));
+    try {
+      // Submit form data to the provided Google Apps Script Web App URL
+      const formData = new FormData();
+      formData.append('name', buyRequest.name);
+      formData.append('phone', buyRequest.phone);
+      formData.append('place', buyRequest.place);
+      formData.append('model', buyRequest.model);
+      formData.append('timestamp', buyRequest.timestamp);
+      await fetch('https://script.google.com/macros/s/AKfycby_PsTewf8KC0dbR47ap0xZTk0C94TY7_VsZYayXCarc00GINbhTrCrusydHRhKExiqVA/exec', {
+        method: 'POST',
+        body: formData
+      });
+    } catch (error) {
+      // Optionally handle error (show message, etc.)
+      console.error('Failed to submit form to Google Sheet', error);
+    }
     setSubmitted(true);
     setTimeout(onClose, 2000); // Auto-close after 2s
   };

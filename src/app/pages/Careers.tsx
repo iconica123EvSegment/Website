@@ -20,9 +20,23 @@ export default function Careers() {
     }
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Here you would handle the form submission, e.g., send to backend or email
+    // Note: File upload (cv) is not sent to Google Sheet, only text fields are sent
+    try {
+      await fetch('https://script.google.com/macros/s/AKfycbwaBQtuaKfxMN6sUIS29Q-jtQfJiYT2KO-X9SXjnNG_4R-aWxbskmDiZNMSzPGp0CKqNw/exec', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: form.name,
+          email: form.email,
+          position: form.position,
+          sheetName: 'CareersForm'
+        })
+      });
+    } catch (error) {
+      console.error('Failed to submit form to Google Sheet', error);
+    }
     setSubmitted(true);
   };
 

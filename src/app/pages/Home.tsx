@@ -88,19 +88,19 @@ export default function Home() {
 
   const reviews = [
     {
-      name: 'Sarah Johnson',
+      name: 'Richa Sharma',
       rating: 5,
       comment: 'The Vira is absolutely amazing! Smooth ride, incredible range, and the app features are a game-changer.',
       model: 'Iconica Vira'
     },
     {
-      name: 'Michael Chen',
+      name: 'Anand Verma',
       rating: 5,
       comment: 'Best investment I made. The Zoro has incredible power and the build quality is top-notch.',
       model: 'Iconica Zoro'
     },
     {
-      name: 'Emily Rodriguez',
+      name: 'Mohit Singh',
       rating: 5,
       comment: 'Love my Navo! Perfect for city commuting and the charging is super convenient.',
       model: 'Iconica Navo'

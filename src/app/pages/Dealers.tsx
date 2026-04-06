@@ -17,8 +17,26 @@ export default function Dealers() {
 
   const [submitted, setSubmitted] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    try {
+      const fd = new FormData();
+      fd.append('name', formData.name);
+      fd.append('email', formData.email);
+      fd.append('phone', formData.phone);
+      fd.append('company', formData.company);
+      fd.append('city', formData.city);
+      fd.append('experience', formData.experience);
+      fd.append('investment', formData.investment);
+      fd.append('message', formData.message);
+      fd.append('sheetName', 'DealersForm');
+      await fetch('https://script.google.com/macros/s/AKfycby_PsTewf8KC0dbR47ap0xZTk0C94TY7_VsZYayXCarc00GINbhTrCrusydHRhKExiqVA/exec', {
+        method: 'POST',
+        body: fd
+      });
+    } catch (error) {
+      console.error('Failed to submit form to Google Sheet', error);
+    }
     setSubmitted(true);
     setTimeout(() => {
       setSubmitted(false);
