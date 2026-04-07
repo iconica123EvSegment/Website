@@ -296,18 +296,23 @@ export default function Contact() {
                 </p>
                 <div className="flex space-x-4">
                   <a
-                    href="#"
+                    href="https://www.facebook.com/share/1E16RXu23n/?mibextid=wwXIfr"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="w-10 h-10 bg-white/5 hover:bg-[#00ff88]/20 border border-white/10 hover:border-[#00ff88]/50 rounded-lg flex items-center justify-center transition-all duration-300"
                     aria-label="Facebook"
                   >
                     <Facebook className="w-5 h-5 text-white/60" />
                   </a>
                   <a
-                    href="#"
+                    href="https://www.youtube.com/@Iconica-g9v"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="w-10 h-10 bg-white/5 hover:bg-[#00ff88]/20 border border-white/10 hover:border-[#00ff88]/50 rounded-lg flex items-center justify-center transition-all duration-300"
-                    aria-label="Twitter"
+                    aria-label="YouTube"
                   >
-                    <Twitter className="w-5 h-5 text-white/60" />
+                    {/* YouTube SVG icon */}
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M21.8 8.001a2.75 2.75 0 0 0-1.936-1.946C18.14 6 12 6 12 6s-6.14 0-7.864.055A2.75 2.75 0 0 0 2.2 8.001 28.6 28.6 0 0 0 2 12a28.6 28.6 0 0 0 .2 3.999 2.75 2.75 0 0 0 1.936 1.946C5.86 18 12 18 12 18s6.14 0 7.864-.055A2.75 2.75 0 0 0 21.8 15.999 28.6 28.6 0 0 0 22 12a28.6 28.6 0 0 0-.2-3.999ZM10 15V9l6 3-6 3Z" fill="currentColor"/></svg>
                   </a>
                   <a
                     href="https://www.instagram.com/iconicaglobex?igsh=MWRpejd2a3U2YzZidA%3D%3D&utm_source=qr"
