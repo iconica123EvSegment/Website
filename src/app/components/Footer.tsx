@@ -65,11 +65,12 @@ export function Footer() {
               The future of electric mobility. High-performance electric scooters engineered for modern riders.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="text-white/60 hover:text-[#00ff88] transition-colors">
+              <a href="https://www.facebook.com/share/1E16RXu23n/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" className="text-white/60 hover:text-[#00ff88] transition-colors">
                 <Facebook size={20} />
               </a>
-              <a href="#" className="text-white/60 hover:text-[#00ff88] transition-colors">
-                <Twitter size={20} />
+              <a href="https://www.youtube.com/@Iconica-g9v" target="_blank" rel="noopener noreferrer" className="text-white/60 hover:text-[#00ff88] transition-colors">
+                {/* YouTube icon not imported; you may want to add a YouTube SVG/icon here */}
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M21.8 8.001a2.75 2.75 0 0 0-1.936-1.946C18.14 6 12 6 12 6s-6.14 0-7.864.055A2.75 2.75 0 0 0 2.2 8.001 28.6 28.6 0 0 0 2 12a28.6 28.6 0 0 0 .2 3.999 2.75 2.75 0 0 0 1.936 1.946C5.86 18 12 18 12 18s6.14 0 7.864-.055A2.75 2.75 0 0 0 21.8 15.999 28.6 28.6 0 0 0 22 12a28.6 28.6 0 0 0-.2-3.999ZM10 15V9l6 3-6 3Z" fill="currentColor"/></svg>
               </a>
               <a href="https://www.instagram.com/iconicaglobex?igsh=MWRpejd2a3U2YzZidA%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer" className="text-white/60 hover:text-[#00ff88] transition-colors">
                 <Instagram size={20} />
