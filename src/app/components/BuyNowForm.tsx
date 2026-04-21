@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { submitForm } from '../lib/formsApi';
 
 interface BuyNowFormProps {
   vehicleName?: string;
@@ -8,6 +9,7 @@ interface BuyNowFormProps {
 const BuyNowForm: React.FC<BuyNowFormProps> = ({ vehicleName, onClose }) => {
   const [form, setForm] = useState({ name: '', phone: '', place: '' });
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -21,23 +23,15 @@ const BuyNowForm: React.FC<BuyNowFormProps> = ({ vehicleName, onClose }) => {
       timestamp: new Date().toISOString(),
     };
     try {
-      // Submit form data to the provided Google Apps Script Web App URL
-      const formData = new FormData();
-      formData.append('name', buyRequest.name);
-      formData.append('phone', buyRequest.phone);
-      formData.append('place', buyRequest.place);
-      formData.append('model', buyRequest.model);
-      formData.append('timestamp', buyRequest.timestamp);
-      await fetch('https://script.google.com/macros/s/AKfycby_PsTewf8KC0dbR47ap0xZTk0C94TY7_VsZYayXCarc00GINbhTrCrusydHRhKExiqVA/exec', {
-        method: 'POST',
-        body: formData
-      });
+      setIsSubmitting(true);
+      await submitForm('quick-buy', buyRequest);
+      setSubmitted(true);
+      setTimeout(onClose, 2000);
     } catch (error) {
-      // Optionally handle error (show message, etc.)
-      console.error('Failed to submit form to Google Sheet', error);
+      console.error('Failed to submit quick buy form', error);
+    } finally {
+      setIsSubmitting(false);
     }
-    setSubmitted(true);
-    setTimeout(onClose, 2000); // Auto-close after 2s
   };
 
   return (
@@ -100,9 +94,10 @@ const BuyNowForm: React.FC<BuyNowFormProps> = ({ vehicleName, onClose }) => {
             </div>
             <button
               type="submit"
+              disabled={isSubmitting}
               className="w-full bg-[#00ff88] text-black font-bold py-2 rounded hover:bg-[#00e5ff] transition"
             >
-              Submit
+              {isSubmitting ? 'Submitting...' : 'Submit'}
             </button>
           </form>
         )}

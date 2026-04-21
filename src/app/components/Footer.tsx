@@ -4,19 +4,29 @@ import iconicaLogoSrc from '../../assets/00ae5a5bf96ad0a467a78b5cb2dac25336ad0c6
 const iconicaLogo = typeof iconicaLogoSrc === 'string' ? iconicaLogoSrc : iconicaLogoSrc.default;
 import { vehicles } from '../data/vehicles';
 import { useState } from 'react';
+import { submitForm } from '../lib/formsApi';
 
 export function Footer() {
   const [email, setEmail] = useState('');
   const [subscribed, setSubscribed] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubscribe = (e: React.FormEvent) => {
+  const handleSubscribe = async (e: React.FormEvent) => {
     e.preventDefault();
     if (email) {
-      setSubscribed(true);
-      setTimeout(() => {
-        setSubscribed(false);
-        setEmail('');
-      }, 3000);
+      try {
+        setIsSubmitting(true);
+        await submitForm('newsletter', { email });
+        setSubscribed(true);
+        setTimeout(() => {
+          setSubscribed(false);
+          setEmail('');
+        }, 3000);
+      } catch (error) {
+        console.error('Failed to subscribe newsletter', error);
+      } finally {
+        setIsSubmitting(false);
+      }
     }
   };
 
@@ -48,9 +58,10 @@ export function Footer() {
                 />
                 <button
                   type="submit"
+                  disabled={isSubmitting}
                   className="px-6 py-3 bg-gradient-to-r from-[#00ff88] to-[#00d4aa] text-[#0a0b0f] font-semibold rounded-lg hover:shadow-lg hover:shadow-[#00ff88]/30 transition-all duration-300"
                 >
-                  Subscribe
+                  {isSubmitting ? 'Submitting...' : 'Subscribe'}
                 </button>
               </form>
             )}

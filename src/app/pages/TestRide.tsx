@@ -4,6 +4,7 @@ import { GlowButton } from '../components/GlowButton';
 import { vehicles } from '../data/vehicles';
 import { Calendar, MapPin, User, Phone, Mail, CheckCircle2 } from 'lucide-react';
 import dealerImage from '../../assets/2e21e76cea61835ee54bfc253a56436d58d437b3.png';
+import { submitForm } from '../lib/formsApi';
 
 export default function TestRide() {
   const [formData, setFormData] = useState({
@@ -17,27 +18,19 @@ export default function TestRide() {
   });
 
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      const fd = new FormData();
-      fd.append('name', formData.name);
-      fd.append('phone', formData.phone);
-      fd.append('email', formData.email);
-      fd.append('city', formData.city);
-      fd.append('model', formData.model);
-      fd.append('date', formData.date);
-      fd.append('message', formData.message);
-      fd.append('sheetName', 'TestRideForm');
-      await fetch('https://script.google.com/macros/s/AKfycby_PsTewf8KC0dbR47ap0xZTk0C94TY7_VsZYayXCarc00GINbhTrCrusydHRhKExiqVA/exec', {
-        method: 'POST',
-        body: fd
-      });
+      setIsSubmitting(true);
+      await submitForm('test-ride', formData);
+      setSubmitted(true);
     } catch (error) {
-      console.error('Failed to submit form to Google Sheet', error);
+      console.error('Failed to submit test ride form', error);
+    } finally {
+      setIsSubmitting(false);
     }
-    setSubmitted(true);
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
@@ -242,8 +235,8 @@ export default function TestRide() {
                 </div>
 
                 {/* Submit Button */}
-                <GlowButton type="submit" variant="primary" className="w-full">
-                  Book Test Ride
+                <GlowButton type="submit" variant="primary" className="w-full" disabled={isSubmitting}>
+                  {isSubmitting ? 'Submitting...' : 'Book Test Ride'}
                 </GlowButton>
               </form>
             </motion.div>

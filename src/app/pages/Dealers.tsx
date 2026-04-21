@@ -2,6 +2,7 @@ import { motion } from 'motion/react';
 import { useState } from 'react';
 import { GlowButton } from '../components/GlowButton';
 import { MapPin, Phone, Mail, Building2, Users, Award, TrendingUp, Handshake } from 'lucide-react';
+import { submitForm } from '../lib/formsApi';
 
 export default function Dealers() {
   const [formData, setFormData] = useState({
@@ -16,41 +17,32 @@ export default function Dealers() {
   });
 
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      const fd = new FormData();
-      fd.append('name', formData.name);
-      fd.append('email', formData.email);
-      fd.append('phone', formData.phone);
-      fd.append('company', formData.company);
-      fd.append('city', formData.city);
-      fd.append('experience', formData.experience);
-      fd.append('investment', formData.investment);
-      fd.append('message', formData.message);
-      fd.append('sheetName', 'DealersForm');
-      await fetch('https://script.google.com/macros/s/AKfycby_PsTewf8KC0dbR47ap0xZTk0C94TY7_VsZYayXCarc00GINbhTrCrusydHRhKExiqVA/exec', {
-        method: 'POST',
-        body: fd
-      });
+      setIsSubmitting(true);
+      await submitForm('dealers', formData);
+      setSubmitted(true);
+      setTimeout(() => {
+        setSubmitted(false);
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          company: '',
+          city: '',
+          experience: '',
+          investment: '',
+          message: ''
+        });
+      }, 3000);
     } catch (error) {
-      console.error('Failed to submit form to Google Sheet', error);
+      console.error('Failed to submit dealers form', error);
+    } finally {
+      setIsSubmitting(false);
     }
-    setSubmitted(true);
-    setTimeout(() => {
-      setSubmitted(false);
-      setFormData({ 
-        name: '', 
-        email: '', 
-        phone: '', 
-        company: '', 
-        city: '', 
-        experience: '', 
-        investment: '', 
-        message: '' 
-      });
-    }, 3000);
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -303,8 +295,8 @@ export default function Dealers() {
                   />
                 </div>
 
-                <GlowButton type="submit" variant="primary" className="w-full">
-                  Submit Application
+                <GlowButton type="submit" variant="primary" className="w-full" disabled={isSubmitting}>
+                  {isSubmitting ? 'Submitting...' : 'Submit Application'}
                 </GlowButton>
               </form>
             )}

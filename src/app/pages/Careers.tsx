@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { submitForm } from '../lib/formsApi';
 
 export default function Careers() {
   const [form, setForm] = useState({
@@ -8,6 +9,7 @@ export default function Careers() {
     cv: null as File | null,
   });
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -22,22 +24,20 @@ export default function Careers() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Note: File upload (cv) is not sent to Google Sheet, only text fields are sent
     try {
-      await fetch('https://script.google.com/macros/s/AKfycbwaBQtuaKfxMN6sUIS29Q-jtQfJiYT2KO-X9SXjnNG_4R-aWxbskmDiZNMSzPGp0CKqNw/exec', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          name: form.name,
-          email: form.email,
-          position: form.position,
-          sheetName: 'CareersForm'
-        })
+      setIsSubmitting(true);
+      await submitForm('careers', {
+        name: form.name,
+        email: form.email,
+        position: form.position,
+        cv: form.cv
       });
+      setSubmitted(true);
     } catch (error) {
-      console.error('Failed to submit form to Google Sheet', error);
+      console.error('Failed to submit careers form', error);
+    } finally {
+      setIsSubmitting(false);
     }
-    setSubmitted(true);
   };
 
   return (
@@ -95,9 +95,10 @@ export default function Careers() {
             </div>
             <button
               type="submit"
+              disabled={isSubmitting}
               className="w-full py-2 bg-gradient-to-r from-[#00e5ff] to-[#00ff88] text-[#0a0b0f] rounded-lg font-semibold hover:shadow-[0_0_20px_rgba(0,229,255,0.3)] transition-all duration-300"
             >
-              Submit Application
+              {isSubmitting ? 'Submitting...' : 'Submit Application'}
             </button>
           </form>
         )}

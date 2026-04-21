@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { motion } from 'motion/react';
 import { 
@@ -14,6 +14,7 @@ import {
   Car
 } from 'lucide-react';
 import { GlowButton } from '../components/GlowButton';
+import { submitForm } from '../lib/formsApi';
 
 interface ProductData {
   id: string;
@@ -43,15 +44,7 @@ export default function BuyNow() {
   });
 
   const [isSubmitted, setIsSubmitted] = useState(false);
-  const [bookings, setBookings] = useState<any[]>([]);
-
-  useEffect(() => {
-    // Load existing bookings from localStorage
-    const savedBookings = localStorage.getItem('iconicaBookings');
-    if (savedBookings) {
-      setBookings(JSON.parse(savedBookings));
-    }
-  }, []);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
@@ -61,29 +54,24 @@ export default function BuyNow() {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
-    // Create booking data
-    const bookingData = {
-      id: Date.now().toString(),
-      product: productData,
-      customer: formData,
-      bookingDate: new Date().toISOString(),
-      status: 'pending'
-    };
-
-    // Save to localStorage
-    const updatedBookings = [...bookings, bookingData];
-    localStorage.setItem('iconicaBookings', JSON.stringify(updatedBookings));
-    setBookings(updatedBookings);
-    
-    setIsSubmitted(true);
-
-    // Reset form after 3 seconds and show success
-    setTimeout(() => {
-      // Don't reset, keep success state
-    }, 3000);
+    try {
+      setIsSubmitting(true);
+      await submitForm('buy-now', {
+        ...formData,
+        productId: productData.id,
+        productName: productData.name,
+        productType: productData.type,
+        productPrice: productData.price || '',
+        bookingDate: new Date().toISOString()
+      });
+      setIsSubmitted(true);
+    } catch (error) {
+      console.error('Failed to submit buy now form', error);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   if (!productData) {
@@ -442,10 +430,11 @@ export default function BuyNow() {
               {/* Submit Button */}
               <button
                 type="submit"
+                disabled={isSubmitting}
                 className="w-full py-4 bg-gradient-to-r from-[#00ff88] to-[#00d4aa] rounded-lg text-[#0a0b0f] font-bold text-lg hover:shadow-lg hover:shadow-[#00ff88]/50 transition-all duration-300 flex items-center justify-center space-x-2"
               >
                 <ShoppingCart size={20} />
-                <span>Confirm Booking</span>
+                <span>{isSubmitting ? 'Submitting...' : 'Confirm Booking'}</span>
               </button>
 
               <p className="text-xs text-white/50 text-center">
